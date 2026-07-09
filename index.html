@@ -9,12 +9,12 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Greek Empire — Campus Ambassador Program">
 <meta property="og:description" content="The best campus job you never knew existed. Get paid to represent Greek Empire on your campus.">
-<meta property="og:image" content="https://greek-empire-ambassador-landing-new.vercel.app/hero-photo.png">
+<meta property="og:image" content="https://greek-empire-ambassador-landing-new.vercel.app/hero-photo.webp">
 <meta property="og:url" content="https://greek-empire-ambassador-landing-new.vercel.app/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Greek Empire — Campus Ambassador Program">
 <meta name="twitter:description" content="The best campus job you never knew existed. Get paid to represent Greek Empire on your campus.">
-<meta name="twitter:image" content="https://greek-empire-ambassador-landing-new.vercel.app/hero-photo.png">
+<meta name="twitter:image" content="https://greek-empire-ambassador-landing-new.vercel.app/hero-photo.webp">
 
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
@@ -524,6 +524,23 @@ nav {
   font-size: 0.75rem; color: var(--text-light);
   text-align: center; margin-top: 1rem; line-height: 1.5;
 }
+.form-agree a { color: var(--gold); text-decoration: underline; cursor: pointer; }
+
+.privacy-modal-overlay {
+  display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6);
+  z-index: 1000; align-items: center; justify-content: center; padding: 1.5rem;
+}
+.privacy-modal-overlay.open { display: flex; }
+.privacy-modal {
+  background: var(--white); border-radius: 16px; max-width: 520px; width: 100%;
+  max-height: 80vh; overflow-y: auto; padding: 2rem; position: relative;
+}
+.privacy-modal h3 { font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 1rem; color: var(--black); }
+.privacy-modal p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 0.9rem; }
+.privacy-modal-close {
+  position: absolute; top: 1rem; right: 1rem; background: none; border: none;
+  font-size: 1.3rem; cursor: pointer; color: var(--text-mid); line-height: 1;
+}
 
 .form-success { display: none; text-align: center; padding: 2rem 0; }
 .form-success-icon { font-size: 3rem; margin-bottom: 1rem; display: block; }
@@ -645,6 +662,7 @@ footer {
 </style>
 </head>
 <body>
+<a href="#main-content" style="position:absolute;left:-9999px;top:0;background:var(--gold);color:#0e0e0c;padding:0.75rem 1.5rem;z-index:2000;font-weight:700;text-decoration:none;" onfocus="this.style.left='1rem';this.style.top='1rem';" onblur="this.style.left='-9999px';">Skip to main content</a>
 
 <!-- NAV -->
 <nav>
@@ -666,7 +684,7 @@ footer {
 </div>
 
 <!-- HERO -->
-<div style="max-width:1200px;margin:0 auto;padding:7rem 2rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;" class="hero-grid">
+<div id="main-content" style="max-width:1200px;margin:0 auto;padding:7rem 2rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;" class="hero-grid">
   <div>
     <div class="hero-tag load-fade-1">
       
@@ -682,25 +700,25 @@ footer {
     <a href="#apply" class="btn-hero load-fade-2" onclick="event.preventDefault();document.getElementById('apply').scrollIntoView({behavior:'smooth'});history.replaceState(null,'',window.location.pathname);">Apply in Under 2 Minutes →</a>
   </div>
   <div class="hero-photo-wrap load-fade-3" style="display:flex;align-items:center;justify-content:center;">
-    <img src="hero-photo.png" alt="Greek Empire Ambassadors" style="width:100%;max-width:480px;height:auto;border-radius:24px;box-shadow:var(--shadow-lg);">
+    <img src="hero-photo.webp" alt="Greek Empire Ambassadors" fetchpriority="high" style="width:100%;max-width:480px;height:auto;border-radius:24px;box-shadow:var(--shadow-lg);">
   </div>
 </div>
 
 <!-- PHOTO STRIP -->
 <div class="photo-strip">
   <div class="photo-strip-track">
-    <div class="photo-strip-item"><img src="product-sweatshirt.png" alt="Sweatshirts" class="photo-strip-img" /><div class="photo-strip-caption">Sweatshirts</div></div>
-    <div class="photo-strip-item"><img src="product-shirts.png" alt="Shirts" class="photo-strip-img" /><div class="photo-strip-caption">Shirts</div></div>
-    <div class="photo-strip-item"><img src="product-hats.png" alt="Hats" class="photo-strip-img" /><div class="photo-strip-caption">Hats</div></div>
-    <div class="photo-strip-item"><img src="product-tanktops.png" alt="Tank Tops" class="photo-strip-img" /><div class="photo-strip-caption">Tank Tops</div></div>
-    <div class="photo-strip-item"><img src="product-bags.png" alt="Bags" class="photo-strip-img" /><div class="photo-strip-caption">Bags</div></div>
-    <div class="photo-strip-item"><img src="product-drinkware.png" alt="Drinkware" class="photo-strip-img" /><div class="photo-strip-caption">Drinkware</div></div>
-    <div class="photo-strip-item"><img src="product-sweatshirt.png" alt="Sweatshirts" class="photo-strip-img" /><div class="photo-strip-caption">Sweatshirts</div></div>
-    <div class="photo-strip-item"><img src="product-shirts.png" alt="Shirts" class="photo-strip-img" /><div class="photo-strip-caption">Shirts</div></div>
-    <div class="photo-strip-item"><img src="product-hats.png" alt="Hats" class="photo-strip-img" /><div class="photo-strip-caption">Hats</div></div>
-    <div class="photo-strip-item"><img src="product-tanktops.png" alt="Tank Tops" class="photo-strip-img" /><div class="photo-strip-caption">Tank Tops</div></div>
-    <div class="photo-strip-item"><img src="product-bags.png" alt="Bags" class="photo-strip-img" /><div class="photo-strip-caption">Bags</div></div>
-    <div class="photo-strip-item"><img src="product-drinkware.png" alt="Drinkware" class="photo-strip-img" /><div class="photo-strip-caption">Drinkware</div></div>
+    <div class="photo-strip-item"><img src="product-sweatshirt.webp" alt="Sweatshirts" class="photo-strip-img" loading="lazy" /><div class="photo-strip-caption">Sweatshirts</div></div>
+    <div class="photo-strip-item"><img src="product-shirts.webp" alt="Shirts" class="photo-strip-img" loading="lazy" /><div class="photo-strip-caption">Shirts</div></div>
+    <div class="photo-strip-item"><img src="product-hats.webp" alt="Hats" class="photo-strip-img" loading="lazy" /><div class="photo-strip-caption">Hats</div></div>
+    <div class="photo-strip-item"><img src="product-tanktops.webp" alt="Tank Tops" class="photo-strip-img" loading="lazy" /><div class="photo-strip-caption">Tank Tops</div></div>
+    <div class="photo-strip-item"><img src="product-bags.webp" alt="Bags" class="photo-strip-img" loading="lazy" /><div class="photo-strip-caption">Bags</div></div>
+    <div class="photo-strip-item"><img src="product-drinkware.webp" alt="Drinkware" class="photo-strip-img" loading="lazy" /><div class="photo-strip-caption">Drinkware</div></div>
+    <div class="photo-strip-item"><img src="product-sweatshirt.webp" alt="Sweatshirts" class="photo-strip-img" loading="lazy" /><div class="photo-strip-caption">Sweatshirts</div></div>
+    <div class="photo-strip-item"><img src="product-shirts.webp" alt="Shirts" class="photo-strip-img" loading="lazy" /><div class="photo-strip-caption">Shirts</div></div>
+    <div class="photo-strip-item"><img src="product-hats.webp" alt="Hats" class="photo-strip-img" loading="lazy" /><div class="photo-strip-caption">Hats</div></div>
+    <div class="photo-strip-item"><img src="product-tanktops.webp" alt="Tank Tops" class="photo-strip-img" loading="lazy" /><div class="photo-strip-caption">Tank Tops</div></div>
+    <div class="photo-strip-item"><img src="product-bags.webp" alt="Bags" class="photo-strip-img" loading="lazy" /><div class="photo-strip-caption">Bags</div></div>
+    <div class="photo-strip-item"><img src="product-drinkware.webp" alt="Drinkware" class="photo-strip-img" loading="lazy" /><div class="photo-strip-caption">Drinkware</div></div>
   </div>
 </div>
 
@@ -766,7 +784,7 @@ footer {
 
 <!-- CLOSING CTA -->
 <div class="closing reveal" id="apply">
-  <img src="logo.png" alt="Greek Empire" style="width:110px;height:auto;margin:0 auto 1.75rem;display:block;position:relative;z-index:1;">
+  <img src="logo.webp" alt="Greek Empire" loading="lazy" style="width:110px;height:auto;margin:0 auto 1.75rem;display:block;position:relative;z-index:1;">
   <div class="closing-eyebrow">Campus Ambassador Application</div>
   <h2>Ready to Leave<br>Your Mark on <span style="font-family:'EB Garamond',serif;font-style:italic;font-weight:700;background:linear-gradient(90deg, #C9A84C 0%, #E8C95A 25%, #FFE078 50%, #E8C95A 75%, #C9A84C 100%); background-size: 200% auto; animation: goldShimmer 3s linear infinite;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;">Campus?</span></h2>
   <p class="closing-sub">Whether you're in Greek life, student government, club sports, cultural orgs, or honor societies, if you're active on campus and enjoy meeting new people, we want to talk.</p>
@@ -775,32 +793,36 @@ footer {
     <div class="form-title">Start My Application</div>
     <div class="form-sub">Takes less than 2 minutes · No experience required</div>
     <form id="apply-form" novalidate>
+      <div style="position:absolute;left:-9999px;top:-9999px;opacity:0;height:0;overflow:hidden;" aria-hidden="true">
+        <label for="website">Leave this field blank</label>
+        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+      </div>
       <div class="form-row">
         <div class="form-group">
           <label for="first_name">First Name *</label>
           <input type="text" id="first_name" name="first_name" placeholder="First" required>
-          <span class="form-error-msg">Please enter your first name</span>
+          <span class="form-error-msg" role="alert">Please enter your first name</span>
         </div>
         <div class="form-group">
           <label for="last_name">Last Name *</label>
           <input type="text" id="last_name" name="last_name" placeholder="Last" required>
-          <span class="form-error-msg">Please enter your last name</span>
+          <span class="form-error-msg" role="alert">Please enter your last name</span>
         </div>
       </div>
       <div class="form-group">
         <label for="email">Email *</label>
         <input type="email" id="email" name="email" placeholder="your@email.com" required>
-        <span class="form-error-msg">Please enter a valid email address</span>
+        <span class="form-error-msg" role="alert">Please enter a valid email address</span>
       </div>
       <div class="form-group">
         <label for="phone">Phone *</label>
         <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" required>
-        <span class="form-error-msg">Please enter your phone number</span>
+        <span class="form-error-msg" role="alert">Please enter your phone number</span>
       </div>
       <div class="form-group">
         <label for="school">School *</label>
         <input type="text" id="school" name="school" placeholder="University / College" required>
-        <span class="form-error-msg">Please enter your school</span>
+        <span class="form-error-msg" role="alert">Please enter your school</span>
       </div>
       <div class="form-group">
         <label for="chapter">Organization / Chapter</label>
@@ -813,7 +835,7 @@ footer {
       <div class="form-group">
         <label for="dob">Date of Birth *</label>
         <input type="date" id="dob" name="dob" required>
-        <span class="form-error-msg">Please enter your date of birth</span>
+        <span class="form-error-msg" role="alert">Please enter your date of birth</span>
       </div>
       <div class="form-group">
         <label for="referred_by">How Did You Hear About Us?</label>
@@ -833,7 +855,7 @@ footer {
         <textarea id="about" name="about" rows="4" placeholder="Clubs, activities, why you'd be a great fit..." style="width:100%;resize:vertical;font-family:inherit;"></textarea>
       </div>
       <button type="submit" class="form-submit" id="submit-btn">Start My Application →</button>
-      <p class="form-agree">By applying you agree to be contacted by the Greek Empire team.</p>
+      <p class="form-agree">By applying you agree to be contacted by the Greek Empire team. We respect your privacy — read our <a onclick="document.getElementById('privacyModal').classList.add('open')">Privacy Policy</a>.</p>
     </form>
     <div class="form-success" id="form-success">
       <span class="form-success-icon">🎉</span>
@@ -859,19 +881,19 @@ footer {
     <h2 class="section-title" style="color:var(--white);">Meet Some of the <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:700;background:linear-gradient(90deg, #C9A84C 0%, #E8C95A 25%, #FFE078 50%, #E8C95A 75%, #C9A84C 100%); background-size: 200% auto; animation: goldShimmer 3s linear infinite;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;">Ambassadors</span></h2>
     <div class="amb-grid">
       <div class="amb-card">
-        <div class="amb-circle"><img src="https://greek-empire.vercel.app/ambassador-1.png" class="amb-img" alt="Elijah"></div>
+        <div class="amb-circle"><img src="https://greek-empire.vercel.app/ambassador-1.png" class="amb-img" alt="Elijah" loading="lazy"></div>
         <div class="amb-name">Elijah</div>
       </div>
       <div class="amb-card">
-        <div class="amb-circle"><img src="https://greek-empire.vercel.app/ambassador-2.png" class="amb-img" alt="Jackson"></div>
+        <div class="amb-circle"><img src="https://greek-empire.vercel.app/ambassador-2.png" class="amb-img" alt="Jackson" loading="lazy"></div>
         <div class="amb-name">Jackson</div>
       </div>
       <div class="amb-card">
-        <div class="amb-circle"><img src="https://greek-empire.vercel.app/ambassador-3.png" class="amb-img" alt="Avry"></div>
+        <div class="amb-circle"><img src="https://greek-empire.vercel.app/ambassador-3.png" class="amb-img" alt="Avry" loading="lazy"></div>
         <div class="amb-name">Avry</div>
       </div>
       <div class="amb-card">
-        <div class="amb-circle"><img src="https://greek-empire.vercel.app/ambassador-4.png" class="amb-img" alt="Alexa"></div>
+        <div class="amb-circle"><img src="https://greek-empire.vercel.app/ambassador-4.png" class="amb-img" alt="Alexa" loading="lazy"></div>
         <div class="amb-name">Alexa</div>
       </div>
     </div>
@@ -884,27 +906,27 @@ footer {
     <span class="section-tag">Need to Know More?</span>
     <h2 class="section-title">Frequently Asked<br>Questions</h2>
     <div class="faq-grid">
-      <div class="faq-card" onclick="this.classList.toggle('open')">
+      <div class="faq-card" role="button" tabindex="0" aria-expanded="false" onclick="this.classList.toggle('open');this.setAttribute('aria-expanded',this.classList.contains('open'));" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
         <div class="faq-q">Do I need sales experience?</div>
         <p class="faq-a">Nope. We'll teach you everything you need to know.</p>
       </div>
-      <div class="faq-card" onclick="this.classList.toggle('open')">
+      <div class="faq-card" role="button" tabindex="0" aria-expanded="false" onclick="this.classList.toggle('open');this.setAttribute('aria-expanded',this.classList.contains('open'));" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
         <div class="faq-q">How much time does it take?</div>
         <p class="faq-a">As much or as little as you want. Most ambassadors fit it around their existing schedule — a few hours a week.</p>
       </div>
-      <div class="faq-card" onclick="this.classList.toggle('open')">
+      <div class="faq-card" role="button" tabindex="0" aria-expanded="false" onclick="this.classList.toggle('open');this.setAttribute('aria-expanded',this.classList.contains('open'));" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
         <div class="faq-q">How do I get paid?</div>
         <p class="faq-a">Every time an organization you bring in places an order with Greek Empire, you earn. No cap, no ceiling.</p>
       </div>
-      <div class="faq-card" onclick="this.classList.toggle('open')">
+      <div class="faq-card" role="button" tabindex="0" aria-expanded="false" onclick="this.classList.toggle('open');this.setAttribute('aria-expanded',this.classList.contains('open'));" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
         <div class="faq-q">Who can I work with?</div>
         <p class="faq-a">Any campus org — Greek life, club sports, student government, cultural organizations, honor societies, event committees, and more.</p>
       </div>
-      <div class="faq-card" onclick="this.classList.toggle('open')">
+      <div class="faq-card" role="button" tabindex="0" aria-expanded="false" onclick="this.classList.toggle('open');this.setAttribute('aria-expanded',this.classList.contains('open'));" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
         <div class="faq-q">Is there a limit to how much I can earn?</div>
         <p class="faq-a">No. Your earning potential grows with the number of organizations you connect.</p>
       </div>
-      <div class="faq-card" onclick="this.classList.toggle('open')">
+      <div class="faq-card" role="button" tabindex="0" aria-expanded="false" onclick="this.classList.toggle('open');this.setAttribute('aria-expanded',this.classList.contains('open'));" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
         <div class="faq-q">What will I gain from this?</div>
         <p class="faq-a">Real sales and marketing experience, new connections, flexible income, and a brand you'll be proud to rep.</p>
       </div>
@@ -914,7 +936,18 @@ footer {
 
 <!-- MOBILE PRE-FOOTER PHOTO -->
 <div class="mobile-footer-photo">
-  <img src="hero-photo.png" alt="Greek Empire Ambassadors">
+  <img src="hero-photo.webp" alt="Greek Empire Ambassadors" loading="lazy">
+</div>
+
+<!-- PRIVACY MODAL -->
+<div class="privacy-modal-overlay" id="privacyModal" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="privacy-modal">
+    <button class="privacy-modal-close" onclick="document.getElementById('privacyModal').classList.remove('open')" aria-label="Close privacy policy">×</button>
+    <h3>Privacy Policy</h3>
+    <p>Greek Empire collects the information you submit on this application (name, email, phone, school, date of birth, and any other details you provide) solely to evaluate your application and, if selected, to onboard you as a Campus Ambassador.</p>
+    <p>We do not sell your personal information to third parties. Your information may be shared internally with the Greek Empire team for recruitment and program administration purposes only.</p>
+    <p>You may request that we delete your information at any time by contacting <a href="mailto:mcarter@empirepromos.com" style="color:var(--gold);">mcarter@empirepromos.com</a>.</p>
+  </div>
 </div>
 
 <!-- FOOTER -->
@@ -956,6 +989,12 @@ footer {
 
 document.getElementById('apply-form').addEventListener('submit', async function(e) {
   e.preventDefault();
+
+  // Honeypot spam check — if this hidden field is filled, silently drop the submission
+  var honeypot = document.getElementById('website');
+  if (honeypot && honeypot.value.trim() !== '') {
+    return;
+  }
 
   // Inline validation
   var requiredFields = [
