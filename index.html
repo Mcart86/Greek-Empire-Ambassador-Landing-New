@@ -602,16 +602,16 @@ footer {
     <img src="logo2.png" alt="Greek Empire" loading="lazy">
   </a>
   <div class="nav-links">
-    <a href="#benefits">Benefits</a>
-    <a href="#how-it-works">How It Works</a>
-    <a href="#faq">FAQ</a>
+    <a href="#benefits" onclick="event.preventDefault();document.getElementById('benefits').scrollIntoView({behavior:'smooth'});history.replaceState(null,'',window.location.pathname);">Benefits</a>
+    <a href="#how-it-works" onclick="event.preventDefault();document.getElementById('how-it-works').scrollIntoView({behavior:'smooth'});history.replaceState(null,'',window.location.pathname);">How It Works</a>
+    <a href="#faq" onclick="event.preventDefault();document.getElementById('faq').scrollIntoView({behavior:'smooth'});history.replaceState(null,'',window.location.pathname);">FAQ</a>
   </div>
-  <a href="#apply" class="nav-cta">Apply Now →</a>
+  <a href="#apply" class="nav-cta" onclick="event.preventDefault();document.getElementById('apply').scrollIntoView({behavior:'smooth'});history.replaceState(null,'',window.location.pathname);">Apply Now →</a>
 </nav>
 
 <!-- MOBILE STICKY APPLY BAR -->
 <div class="mobile-apply-bar">
-  <a href="#apply">Apply Now →</a>
+  <a href="#apply" onclick="event.preventDefault();document.getElementById('apply').scrollIntoView({behavior:'smooth'});history.replaceState(null,'',window.location.pathname);">Apply Now →</a>
 </div>
 
 <!-- HERO -->
@@ -629,7 +629,7 @@ footer {
     <p style="font-size:1.05rem;color:var(--text-mid);line-height:1.7;max-width:460px;margin-bottom:1rem;">We handle the design, production, and delivery.</p>
     <p style="font-size:1.05rem;color:var(--text-mid);line-height:1.7;max-width:460px;margin-bottom:1rem;">You build relationships and earn on every order.</p>
     <p style="font-size:0.95rem;color:var(--gold);font-weight:700;letter-spacing:0.03em;max-width:460px;margin-bottom:2rem;">Online store coming soon!</p>
-    <a href="#apply" class="btn-hero">Apply in Under 2 Minutes →</a>
+    <a href="#apply" class="btn-hero" onclick="event.preventDefault();document.getElementById('apply').scrollIntoView({behavior:'smooth'});history.replaceState(null,'',window.location.pathname);">Apply in Under 2 Minutes →</a>
   </div>
   <div class="hero-photo-wrap" style="display:flex;align-items:center;justify-content:center;">
     <img src="hero-photo.png" alt="Greek Empire Ambassadors" style="width:100%;max-width:480px;height:auto;border-radius:24px;box-shadow:var(--shadow-lg);">
