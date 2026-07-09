@@ -180,7 +180,7 @@ nav {
 @media (max-width: 768px) { .photo-strip-img { width: 160px; height: 120px; } .photo-strip-caption { font-size: 0.62rem; letter-spacing: 0.15em; padding: 0.5rem 0; } }
 
 /* ── SECTION BASE ── */
-.section { padding: 6rem 2rem; }
+.section { padding: 4.5rem 2rem; }
 .section-inner { max-width: 1100px; margin: 0 auto; }
 
 .gold-grad-text {
@@ -212,7 +212,7 @@ nav {
 
 .stanza-grid {
   display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
-  align-items: center; margin-top: 3rem;
+  align-items: center; margin-top: 2rem;
 }
 
 .stanza-text {
@@ -236,7 +236,7 @@ nav {
 /* ── BENEFITS ── */
 .benefits-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 .benefit-card {
@@ -299,13 +299,13 @@ nav {
 
 /* ── HOW IT WORKS ── */
 .steps-row {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
-  margin-top: 3rem; position: relative;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+  margin-top: 2rem; position: relative;
 }
 
 .steps-row::before {
   content: ''; position: absolute;
-  top: 36px; left: 10%; right: 10%; height: 2px;
+  top: 36px; left: 15%; right: 15%; height: 2px;
   background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
   z-index: 0;
 }
@@ -491,7 +491,8 @@ footer {
 
   .section { padding: 3rem 1.25rem; }
 
-  .hero { grid-template-columns: 1fr; gap: 2rem; padding: 6rem 1.25rem 3rem; }
+  .hero-grid { grid-template-columns: 1fr !important; gap: 2rem !important; padding: 6rem 1.25rem 1.5rem !important; }
+  .hero { grid-template-columns: 1fr; gap: 2rem; padding: 6rem 1.25rem 1.5rem; }
   .hero-right { min-height: 280px; padding: 2rem; }
   .hero-right-logo { width: 140px; }
 
@@ -584,7 +585,7 @@ footer {
 </div>
 
 <!-- HERO -->
-<div style="max-width:1200px;margin:0 auto;padding:7rem 2rem 4rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;" class="hero-grid">
+<div style="max-width:1200px;margin:0 auto;padding:7rem 2rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;" class="hero-grid">
   <div>
     <div class="hero-tag">🏛️ Campus Ambassador Program</div>
     <h1 style="font-family:var(--font-display);font-size:clamp(52px,6vw,80px);line-height:0.95;letter-spacing:0.02em;color:var(--black);margin-bottom:1.25rem;">
@@ -653,39 +654,7 @@ footer {
         <p class="benefit-body">Develop communication, leadership, and business skills you'll use long after graduation.</p>
       </div>
     </div>
-  </div>
-</div>
-
-<!-- WHAT YOU'LL DO -->
-<div class="section do-section">
-  <div class="section-inner">
-    <span class="section-tag">The Role</span>
-    <h2 class="section-title">What You'll<br>Be Doing</h2>
-    <div class="checklist-grid">
-      <div class="check-item"><div class="check-box">✓</div>Meet student organizations across campus</div>
-      <div class="check-item"><div class="check-box">✓</div>Help clubs and teams create custom apparel</div>
-      <div class="check-item"><div class="check-box">✓</div>Share ideas and inspiration on social media</div>
-      <div class="check-item"><div class="check-box">✓</div>Connect organizations with our team</div>
-      <div class="check-item"><div class="check-box">✓</div>Build relationships with student leaders</div>
-      <div class="check-item"><div class="check-box">✓</div>Get rewarded for helping orgs place orders</div>
-    </div>
-  </div>
-</div>
-
-<!-- WHO WE WANT -->
-<div class="section" style="background:var(--white);">
-  <div class="section-inner">
-    <span class="section-tag">Who We're Looking For</span>
-    <h2 class="section-title">Sound Like<br><span style="background:linear-gradient(90deg, #C9A84C 0%, #E8C95A 25%, #FFE078 50%, #E8C95A 75%, #C9A84C 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;">You?</span></h2>
-    <p class="section-sub" style="margin-bottom:0;">Whether you're in Greek life, student government, club sports, cultural orgs, honor societies, or anything else — if you're connected on campus, we want to talk.</p>
-    <div class="traits-grid">
-      <div class="trait-card"><span class="trait-icon">😊</span><div class="trait-label">Love Meeting New People</div></div>
-      <div class="trait-card"><span class="trait-icon">🎓</span><div class="trait-label">Active on Campus</div></div>
-      <div class="trait-card"><span class="trait-icon">🤝</span><div class="trait-label">Enjoy Helping Others</div></div>
-      <div class="trait-card"><span class="trait-icon">💼</span><div class="trait-label">Want Real Experience</div></div>
-      <div class="trait-card"><span class="trait-icon">⚡</span><div class="trait-label">Motivated & Outgoing</div></div>
-      <div class="trait-card"><span class="trait-icon">✅</span><div class="trait-label">Dependable & Reliable</div></div>
-    </div>
+    <p class="section-sub" style="margin-top:2.5rem;">Whether you're in Greek life, student government, club sports, cultural orgs, or honor societies — if you're active on campus and enjoy meeting new people, we want to talk.</p>
   </div>
 </div>
 
@@ -702,16 +671,11 @@ footer {
       </div>
       <div class="step-card">
         <div class="step-num">2</div>
-        <div class="step-title">Connect</div>
-        <p class="step-body">Meet virtually with our team and learn how the program works.</p>
+        <div class="step-title">Onboard</div>
+        <p class="step-body">Meet virtually with our team, then get your ambassador kit and everything you need to succeed.</p>
       </div>
       <div class="step-card">
         <div class="step-num">3</div>
-        <div class="step-title">Launch</div>
-        <p class="step-body">Get your ambassador kit, resources, and everything you need to succeed.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">4</div>
         <div class="step-title">Start Earning</div>
         <p class="step-body">Help campus organizations create amazing merch and earn on every order.</p>
       </div>
