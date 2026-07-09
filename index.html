@@ -177,7 +177,7 @@ nav {
 .photo-strip-img:hover { opacity: 1; }
 .photo-strip-caption { font-size: 0.85rem; letter-spacing: 0.25em; text-transform: uppercase; text-align: center; color: #D4A43A; padding: 0.75rem 0; }
 @keyframes photoScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-@media (max-width: 768px) { .photo-strip-img { width: 260px; height: 200px; } }
+@media (max-width: 768px) { .photo-strip-img { width: 160px; height: 120px; } .photo-strip-caption { font-size: 0.62rem; letter-spacing: 0.15em; padding: 0.5rem 0; } }
 
 /* ── SECTION BASE ── */
 .section { padding: 6rem 2rem; }
@@ -489,17 +489,44 @@ footer {
   nav { padding: 0.85rem 1rem; }
   .nav-logo img { height: 30px; }
 
+  .section { padding: 3rem 1.25rem; }
+
   .hero { grid-template-columns: 1fr; gap: 2rem; padding: 6rem 1.25rem 3rem; }
   .hero-right { min-height: 280px; padding: 2rem; }
   .hero-right-logo { width: 140px; }
 
-  .benefits-grid { grid-template-columns: 1fr; }
+  .benefits-grid { grid-template-columns: 1fr; gap: 1rem; margin-top: 2rem; }
   .stanza-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .checklist-grid { grid-template-columns: 1fr; }
-  .traits-grid { grid-template-columns: 1fr 1fr; }
-  .steps-row { grid-template-columns: 1fr 1fr; }
+  .checklist-grid { grid-template-columns: 1fr; margin-top: 1.5rem; gap: 0.75rem; }
+  .traits-grid { grid-template-columns: 1fr 1fr; margin-top: 1.5rem; }
+
+  /* How It Works: horizontal swipe row on mobile */
+  .steps-row {
+    display: flex; grid-template-columns: none; overflow-x: auto; scroll-snap-type: x mandatory;
+    gap: 1rem; margin-top: 2rem; padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+  }
   .steps-row::before { display: none; }
-  .faq-grid { grid-template-columns: 1fr; }
+  .step-card { flex: 0 0 78%; scroll-snap-align: start; }
+
+  .faq-grid { grid-template-columns: 1fr; margin-top: 1.5rem; }
+
+  /* FAQ accordion on mobile */
+  .faq-card { padding: 0; overflow: hidden; }
+  .faq-card .faq-q {
+    padding: 1.1rem 1.25rem; margin-bottom: 0; cursor: pointer;
+    position: relative; padding-right: 2.25rem;
+  }
+  .faq-card .faq-q::after {
+    content: '+'; position: absolute; right: 1.1rem; top: 50%; transform: translateY(-50%);
+    font-size: 1.2rem; font-weight: 400; color: var(--gold); transition: transform 0.2s;
+  }
+  .faq-card.open .faq-q::after { transform: translateY(-50%) rotate(45deg); }
+  .faq-card .faq-a {
+    max-height: 0; overflow: hidden; padding: 0 1.25rem; margin: 0;
+    transition: max-height 0.25s ease, padding 0.25s ease;
+  }
+  .faq-card.open .faq-a { max-height: 240px; padding: 0 1.25rem 1.25rem; }
 
   .form-row { grid-template-columns: 1fr; }
   .form-wrap { padding: 2rem 1.5rem; border-radius: 16px; }
@@ -508,11 +535,31 @@ footer {
   .trust-item { font-size: 0.72rem; }
 
   footer { flex-direction: column; text-align: center; }
+
+  /* Sticky mobile apply bar */
+  .mobile-apply-bar { display: flex; }
+  body { padding-bottom: 68px; }
+}
+
+@media (min-width: 769px) {
+  .mobile-apply-bar { display: none; }
+}
+
+.mobile-apply-bar {
+  display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+  padding: 0.7rem 1rem; background: rgba(10,10,10,0.96); backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  align-items: center; justify-content: center;
+}
+.mobile-apply-bar a {
+  display: block; width: 100%; text-align: center;
+  background: linear-gradient(90deg, #C9A84C 0%, #E8C95A 25%, #FFE078 50%, #E8C95A 75%, #C9A84C 100%);
+  color: #0e0e0c; font-family: var(--font-body); font-weight: 800; font-size: 0.95rem;
+  padding: 0.85rem; border-radius: 100px; text-decoration: none;
 }
 
 @media (max-width: 480px) {
   .traits-grid { grid-template-columns: 1fr; }
-  .steps-row { grid-template-columns: 1fr; }
   .hero h1 { font-size: 44px; }
 }
 
@@ -530,6 +577,11 @@ footer {
   </a>
   <a href="#apply" class="nav-cta">Apply Now →</a>
 </nav>
+
+<!-- MOBILE STICKY APPLY BAR -->
+<div class="mobile-apply-bar">
+  <a href="#apply">Apply Now →</a>
+</div>
 
 <!-- HERO -->
 <div style="max-width:1200px;margin:0 auto;padding:7rem 2rem 4rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;" class="hero-grid">
@@ -755,27 +807,27 @@ footer {
     <span class="section-tag">Need to Know More?</span>
     <h2 class="section-title">Frequently Asked<br>Questions</h2>
     <div class="faq-grid">
-      <div class="faq-card">
+      <div class="faq-card" onclick="this.classList.toggle('open')">
         <div class="faq-q">Do I need sales experience?</div>
         <p class="faq-a">Nope. We'll teach you everything you need to know.</p>
       </div>
-      <div class="faq-card">
+      <div class="faq-card" onclick="this.classList.toggle('open')">
         <div class="faq-q">How much time does it take?</div>
         <p class="faq-a">As much or as little as you want. Most ambassadors fit it around their existing schedule — a few hours a week.</p>
       </div>
-      <div class="faq-card">
+      <div class="faq-card" onclick="this.classList.toggle('open')">
         <div class="faq-q">How do I get paid?</div>
         <p class="faq-a">Every time an organization you bring in places an order with Greek Empire, you earn. No cap, no ceiling.</p>
       </div>
-      <div class="faq-card">
+      <div class="faq-card" onclick="this.classList.toggle('open')">
         <div class="faq-q">Who can I work with?</div>
         <p class="faq-a">Any campus org — Greek life, club sports, student government, cultural organizations, honor societies, event committees, and more.</p>
       </div>
-      <div class="faq-card">
+      <div class="faq-card" onclick="this.classList.toggle('open')">
         <div class="faq-q">Is there a limit to how much I can earn?</div>
         <p class="faq-a">No. Your earning potential grows with the number of organizations you connect.</p>
       </div>
-      <div class="faq-card">
+      <div class="faq-card" onclick="this.classList.toggle('open')">
         <div class="faq-q">What will I gain from this?</div>
         <p class="faq-a">Real sales and marketing experience, new connections, flexible income, and a brand you'll be proud to rep.</p>
       </div>
