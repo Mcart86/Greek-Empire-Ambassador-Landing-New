@@ -482,6 +482,8 @@ footer {
 
 .footer-text { font-size: 0.75rem; color: rgba(255,255,255,0.35); letter-spacing: 0.1em; text-transform: uppercase; }
 
+.mobile-footer-photo { display: none; }
+
 /* ── MOBILE ── */
 @media (max-width: 768px) {
   nav { padding: 0.85rem 1rem; }
@@ -538,6 +540,9 @@ footer {
   .trust-item { font-size: 0.72rem; }
 
   footer { flex-direction: column; text-align: center; }
+
+  .mobile-footer-photo { display: block; padding: 0 1.25rem 2rem; }
+  .mobile-footer-photo img { width: 100%; height: auto; border-radius: 16px; box-shadow: var(--shadow-lg); display: block; }
 
   /* Sticky mobile apply bar */
   .mobile-apply-bar { display: flex; }
@@ -778,6 +783,11 @@ footer {
       </div>
     </div>
   </div>
+</div>
+
+<!-- MOBILE PRE-FOOTER PHOTO -->
+<div class="mobile-footer-photo">
+  <img src="hero-photo.png" alt="Greek Empire Ambassadors">
 </div>
 
 <!-- FOOTER -->
