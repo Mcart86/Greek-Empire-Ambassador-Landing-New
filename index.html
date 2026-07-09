@@ -234,30 +234,29 @@ nav {
 .stanza-card-body { font-size: 0.95rem; color: var(--text-mid); line-height: 1.8; }
 
 /* ── BENEFITS ── */
-.benefits-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
-  margin-top: 2rem;
+.benefits-list {
+  display: flex; flex-direction: column;
+  margin-top: 2.5rem; max-width: 720px;
 }
 
-.benefit-card {
-  background: var(--black); border-radius: var(--radius);
-  padding: 2rem; box-shadow: var(--shadow);
-  border: 1.5px solid var(--black);
-  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+.benefit-row {
+  display: flex; align-items: baseline; gap: 1.75rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--gray-mid);
 }
-.benefit-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--gold); }
+.benefit-row:first-child { padding-top: 0; }
+.benefit-row:last-child { border-bottom: none; }
 
-.benefit-icon-wrap {
-  width: 52px; height: 52px; background: var(--white);
-  border-radius: 14px; display: flex; align-items: center; justify-content: center;
-  font-size: 1.5rem; margin-bottom: 1.25rem;
+.benefit-num {
+  font-family: var(--font-display); font-size: 1.6rem;
+  background: linear-gradient(90deg, #C9A84C 0%, #E8C95A 25%, #FFE078 50%, #E8C95A 75%, #C9A84C 100%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;
+  min-width: 3rem; flex-shrink: 0;
 }
 
 .benefit-title {
-  font-weight: 800; font-size: 1rem; color: var(--white); margin-bottom: 0.5rem;
+  font-weight: 800; font-size: 1.15rem; color: var(--black);
 }
-
-.benefit-body { font-size: 0.9rem; color: rgba(255,255,255,0.75); line-height: 1.65; }
 
 /* ── WHAT YOU'LL DO ── */
 .do-section { background: var(--black); }
@@ -496,7 +495,10 @@ footer {
   .hero-right { min-height: 280px; padding: 2rem; }
   .hero-right-logo { width: 140px; }
 
-  .benefits-grid { grid-template-columns: 1fr; gap: 1rem; margin-top: 2rem; }
+  .benefits-list { margin-top: 1.5rem; }
+  .benefit-row { padding: 1.1rem 0; gap: 1rem; }
+  .benefit-num { font-size: 1.3rem; min-width: 2.2rem; }
+  .benefit-title { font-size: 1rem; }
   .stanza-grid { grid-template-columns: 1fr; gap: 2rem; }
   .checklist-grid { grid-template-columns: 1fr; margin-top: 1.5rem; gap: 0.75rem; }
   .traits-grid { grid-template-columns: 1fr 1fr; margin-top: 1.5rem; }
@@ -622,36 +624,30 @@ footer {
   <div class="section-inner">
     <span class="section-tag">Why Students Love This</span>
     <h2 class="section-title">What's In It<br>For You</h2>
-    <div class="benefits-grid">
-      <div class="benefit-card">
-        <div class="benefit-icon-wrap">💰</div>
+    <div class="benefits-list">
+      <div class="benefit-row">
+        <span class="benefit-num">01</span>
         <div class="benefit-title">Make Extra Money</div>
-        <p class="benefit-body">Earn while helping organizations create custom merchandise for events, fundraisers, competitions, and campus life.</p>
       </div>
-      <div class="benefit-card">
-        <div class="benefit-icon-wrap">🎯</div>
+      <div class="benefit-row">
+        <span class="benefit-num">02</span>
         <div class="benefit-title">Build a Resume That Stands Out</div>
-        <p class="benefit-body">Graduate with real experience in marketing, sales, and business development — not just another campus job.</p>
       </div>
-      <div class="benefit-card">
-        <div class="benefit-icon-wrap">🤝</div>
+      <div class="benefit-row">
+        <span class="benefit-num">03</span>
         <div class="benefit-title">Expand Your Network</div>
-        <p class="benefit-body">Meet org presidents, club officers, and campus influencers while building real professional connections.</p>
       </div>
-      <div class="benefit-card">
-        <div class="benefit-icon-wrap">📅</div>
+      <div class="benefit-row">
+        <span class="benefit-num">04</span>
         <div class="benefit-title">Work When It Works for You</div>
-        <p class="benefit-body">No fixed schedule. Work between classes, after practice, or whenever you have time.</p>
       </div>
-      <div class="benefit-card">
-        <div class="benefit-icon-wrap">👕</div>
+      <div class="benefit-row">
+        <span class="benefit-num">05</span>
         <div class="benefit-title">Represent an Exciting Brand</div>
-        <p class="benefit-body">Receive exclusive ambassador gear and resources while helping organizations create apparel people actually want to wear.</p>
       </div>
-      <div class="benefit-card">
-        <div class="benefit-icon-wrap">🚀</div>
+      <div class="benefit-row">
+        <span class="benefit-num">06</span>
         <div class="benefit-title">Learn Skills That Last</div>
-        <p class="benefit-body">Develop communication, leadership, and business skills you'll use long after graduation.</p>
       </div>
     </div>
     <p class="section-sub" style="margin-top:2.5rem;">Whether you're in Greek life, student government, club sports, cultural orgs, or honor societies — if you're active on campus and enjoy meeting new people, we want to talk.</p>
