@@ -554,6 +554,10 @@ footer {
   #ambassadors { padding-top: 1.5rem; }
   .closing { padding: 3.5rem 1.25rem; }
 
+  .amb-grid { gap: 1.5rem 1.25rem; }
+  .amb-card { width: calc(50% - 0.75rem); }
+  .amb-circle { max-width: 130px; }
+
   .hero-grid { grid-template-columns: 1fr !important; gap: 2rem !important; padding: 6rem 1.25rem 1.5rem !important; }
   .hero { grid-template-columns: 1fr; gap: 2rem; padding: 6rem 1.25rem 1.5rem; }
   .hero-right { min-height: 280px; padding: 2rem; }
@@ -842,7 +846,7 @@ footer {
 
 <!-- AMBASSADOR PROFILES -->
 <style>
-.amb-circle { width:180px; height:180px; border-radius:50%; overflow:hidden; margin:0 auto 1.1rem; position:relative; background:transparent; box-shadow:0 4px 20px rgba(0,0,0,0.25); transition: box-shadow 0.3s ease; }
+.amb-circle { width:100%; max-width:180px; aspect-ratio:1/1; border-radius:50%; overflow:hidden; margin:0 auto 1.1rem; position:relative; background:transparent; box-shadow:0 4px 20px rgba(0,0,0,0.25); transition: box-shadow 0.3s ease; }
 .amb-circle:hover { box-shadow: 0 0 24px rgba(201,168,76,0.4); }
 .amb-img { width:130%; height:130%; object-fit:cover; display:block; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); transition: transform 0.4s ease; }
 .amb-circle:hover .amb-img { transform:translate(-50%,-50%) scale(1.1); }
