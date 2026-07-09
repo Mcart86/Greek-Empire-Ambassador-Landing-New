@@ -440,7 +440,8 @@ nav {
 }
 
 .form-group input,
-.form-group select {
+.form-group select,
+.form-group textarea {
   width: 100%; background: var(--gray-light);
   border: 1.5px solid var(--gray-mid); border-radius: var(--radius-sm);
   color: var(--text-dark); font-family: var(--font-body);
@@ -450,9 +451,11 @@ nav {
 }
 
 .form-group input:focus,
-.form-group select:focus { border-color: var(--gold); background: var(--white); }
+.form-group select:focus,
+.form-group textarea:focus { border-color: var(--gold); background: var(--white); }
 
-.form-group input::placeholder { color: var(--text-light); }
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: var(--text-light); }
 
 .form-group select {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C89B3C' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
@@ -743,6 +746,10 @@ footer {
         <input type="text" id="instagram" name="instagram" placeholder="@yourhandle">
       </div>
       <div class="form-group">
+        <label for="dob">Date of Birth *</label>
+        <input type="date" id="dob" name="dob" required>
+      </div>
+      <div class="form-group">
         <label for="referred_by">How Did You Hear About Us?</label>
         <select id="referred_by" name="referred_by">
           <option value="" disabled selected>Select one</option>
@@ -756,6 +763,10 @@ footer {
           <option value="Ad-Facebook">Advertisement — Facebook</option>
           <option value="Ad-TikTok">Advertisement — TikTok</option>
         </select>
+      </div>
+      <div class="form-group">
+        <label for="about">Tell Us About Yourself</label>
+        <textarea id="about" name="about" rows="4" placeholder="Clubs, activities, why you'd be a great fit..." style="width:100%;resize:vertical;font-family:inherit;"></textarea>
       </div>
       <button type="submit" class="form-submit" id="submit-btn">Start My Application →</button>
       <p class="form-agree">By applying you agree to be contacted by the Greek Empire team.</p>
@@ -840,7 +851,9 @@ document.getElementById('apply-form').addEventListener('submit', async function(
     school_text:       document.getElementById('school').value.trim(),
     chapter_text:      document.getElementById('chapter').value.trim(),
     instagram_handle:  document.getElementById('instagram').value.trim(),
+    date_of_birth:     document.getElementById('dob').value,
     recruited_by_text: document.getElementById('referred_by').value,
+    about_text:        document.getElementById('about').value.trim(),
     source:            'ambassador-landing-new'
   };
 
