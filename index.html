@@ -4,629 +4,497 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Greek Empire — Campus Ambassador Program</title>
-<meta name="description" content="The best campus job you never knew existed. Get paid to represent Greek Empire on your campus. Flexible hours, real experience, unlimited earning potential.">
+<meta name="description" content="The best campus job you never knew existed. Get paid to represent Greek Empire on your campus.">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
-<link rel="preload" href="logo.png" as="image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Barlow:wght@400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital@1&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --black: #0a0a0a;
-  --black-soft: #111111;
-  --black-card: #161616;
-  --gold: #C9A84C;
-  --gold-light: #E8C95A;
-  --gold-dim: rgba(201,168,76,0.25);
-  --gold-glow: rgba(201,168,76,0.08);
-  --white: #F5F0E8;
-  --white-dim: rgba(245,240,232,0.7);
-  --white-faint: rgba(245,240,232,0.4);
+  --gold: #C89B3C;
+  --gold-light: #E8B84B;
+  --gold-pale: #FDF3DC;
+  --gold-dim: rgba(200,155,60,0.2);
+  --black: #0D0D0D;
+  --black-soft: #1A1A1A;
+  --white: #FFFFFF;
+  --cream: #FCFBF7;
+  --cream-dark: #F4F2EA;
+  --gray-light: #F7F7F5;
+  --gray-mid: #E8E6E0;
+  --text-dark: #1A1A1A;
+  --text-mid: #4A4A4A;
+  --text-light: #7A7A7A;
   --font-display: 'Bebas Neue', Impact, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
   --font-serif: 'Cormorant Garamond', Georgia, serif;
-  --font-sans: 'Barlow', system-ui, sans-serif;
+  --radius: 16px;
+  --radius-sm: 8px;
+  --shadow: 0 4px 24px rgba(0,0,0,0.08);
+  --shadow-lg: 0 12px 48px rgba(0,0,0,0.12);
 }
 
 html { scroll-behavior: smooth; }
+body { background: var(--white); color: var(--text-dark); font-family: var(--font-body); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 
-body {
-  background: var(--black);
-  color: var(--white);
-  font-family: var(--font-sans);
-  font-size: 16px;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* NAV */
+/* ── NAV ── */
 nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(10,10,10,0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--gold-dim);
+  display: flex; justify-content: space-between; align-items: center;
+  background: rgba(255,255,255,0.92); backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--gray-mid);
 }
-
-.nav-logo img { height: 40px; width: auto; }
-
+.nav-logo img { height: 38px; width: auto; }
 .nav-cta {
-  background: var(--gold);
-  color: var(--black);
-  font-family: var(--font-display);
-  font-size: 0.95rem;
-  letter-spacing: 0.12em;
-  padding: 0.55rem 1.4rem;
-  text-decoration: none;
-  transition: background 0.2s;
+  background: var(--gold); color: var(--white);
+  font-family: var(--font-body); font-weight: 700; font-size: 0.88rem;
+  letter-spacing: 0.04em; padding: 0.6rem 1.5rem;
+  border-radius: 100px; text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
 }
-.nav-cta:hover { background: var(--gold-light); }
+.nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
 
-/* HERO */
+/* ── HERO ── */
 .hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 7rem 1.5rem 4rem;
-  background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.12) 0%, transparent 70%);
-  position: relative;
+  min-height: 100vh; padding: 7rem 2rem 4rem;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+  align-items: center; max-width: 1200px; margin: 0 auto;
 }
 
-.hero-logo {
-  width: min(280px, 60vw);
-  height: auto;
-  margin-bottom: 2.5rem;
-  opacity: 0.95;
-}
+.hero-left {}
 
-.hero-eyebrow {
-  font-family: var(--font-sans);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 1rem;
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--gold-pale); color: var(--gold);
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; padding: 0.4rem 1rem; border-radius: 100px;
+  margin-bottom: 1.5rem;
 }
 
 .hero h1 {
   font-family: var(--font-display);
-  font-size: clamp(52px, 10vw, 96px);
-  line-height: 0.95;
-  letter-spacing: 0.03em;
-  color: var(--white);
-  margin-bottom: 1rem;
-  max-width: 900px;
+  font-size: clamp(52px, 6vw, 80px);
+  line-height: 0.95; letter-spacing: 0.02em;
+  color: var(--black); margin-bottom: 1.25rem;
 }
 
-.hero h1 span { color: var(--gold); }
+.hero h1 .gold { color: var(--gold); }
 
 .hero-sub {
-  font-family: var(--font-serif);
-  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-  font-style: italic;
-  color: var(--white-dim);
-  max-width: 600px;
-  margin: 0 auto 1.5rem;
-  line-height: 1.5;
+  font-size: 1.1rem; color: var(--text-mid); line-height: 1.7;
+  max-width: 480px; margin-bottom: 2rem;
 }
 
-.hero-intro {
-  font-size: 1rem;
-  color: var(--white-dim);
-  max-width: 560px;
-  margin: 0 auto 2.5rem;
-  line-height: 1.7;
+.hero-badges {
+  display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2rem;
 }
 
-.hero-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  justify-content: center;
-  margin-bottom: 2.5rem;
+.badge {
+  background: var(--white); border: 1.5px solid var(--gray-mid);
+  color: var(--text-dark); font-size: 0.88rem; font-weight: 600;
+  padding: 0.5rem 1rem; border-radius: 100px;
+  display: flex; align-items: center; gap: 0.4rem;
+  box-shadow: var(--shadow);
 }
 
-.pill {
-  background: var(--gold-glow);
-  border: 1px solid var(--gold-dim);
-  color: var(--white);
-  font-size: 0.85rem;
-  font-weight: 600;
-  padding: 0.45rem 1rem;
-  letter-spacing: 0.05em;
+.btn-hero {
+  display: inline-block; background: var(--gold); color: var(--white);
+  font-family: var(--font-body); font-weight: 800; font-size: 1.05rem;
+  padding: 1rem 2.5rem; border-radius: 100px; text-decoration: none;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(200,155,60,0.35);
+  margin-bottom: 1rem; display: inline-block;
+}
+.btn-hero:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(200,155,60,0.45); }
+
+.hero-checks {
+  display: flex; flex-direction: column; gap: 0.35rem;
+}
+.hero-check {
+  font-size: 0.85rem; color: var(--text-light);
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.hero-check::before { content: '✓'; color: var(--gold); font-weight: 700; }
+
+.hero-right {
+  background: linear-gradient(135deg, var(--gold-pale) 0%, var(--cream-dark) 100%);
+  border-radius: 24px; padding: 3rem 2rem;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  min-height: 480px; position: relative; overflow: hidden;
+  box-shadow: var(--shadow-lg);
 }
 
-.btn-primary {
-  display: inline-block;
-  background: var(--gold);
-  color: var(--black);
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  letter-spacing: 0.15em;
-  padding: 1rem 3rem;
-  text-decoration: none;
-  transition: background 0.2s, transform 0.15s;
-  margin-bottom: 0.75rem;
-}
-.btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+.hero-right-logo { width: 200px; height: auto; margin-bottom: 2rem; }
 
-.btn-note {
-  display: block;
-  font-size: 0.78rem;
-  color: var(--white-faint);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+.hero-stat-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; width: 100%;
 }
 
-/* DIVIDER */
-.divider {
-  width: 60px;
-  height: 1px;
-  background: var(--gold);
-  margin: 0 auto;
+.hero-stat {
+  background: var(--white); border-radius: var(--radius-sm);
+  padding: 1.25rem; text-align: center; box-shadow: var(--shadow);
 }
 
-/* SECTIONS */
-section {
-  padding: 5rem 1.5rem;
-  max-width: 900px;
-  margin: 0 auto;
+.hero-stat-num {
+  font-family: var(--font-display); font-size: 2rem;
+  color: var(--gold); letter-spacing: 0.04em; display: block;
+  line-height: 1;
 }
 
-.section-eyebrow {
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--gold);
+.hero-stat-label {
+  font-size: 0.78rem; color: var(--text-light); font-weight: 500;
+  margin-top: 0.25rem; display: block;
+}
+
+/* ── TRUST BAR ── */
+.trust-bar {
+  background: var(--black); padding: 1.25rem 2rem;
+  display: flex; justify-content: center; align-items: center;
+  flex-wrap: wrap; gap: 2.5rem;
+}
+
+.trust-item {
+  display: flex; align-items: center; gap: 0.5rem;
+  font-size: 0.82rem; font-weight: 600; color: rgba(255,255,255,0.7);
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+
+.trust-item span { color: var(--gold); font-size: 1rem; }
+
+/* ── SECTION BASE ── */
+.section { padding: 6rem 2rem; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+
+.section-tag {
+  display: inline-block; background: var(--gold-pale); color: var(--gold);
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em;
+  text-transform: uppercase; padding: 0.35rem 0.9rem; border-radius: 100px;
   margin-bottom: 1rem;
-  display: block;
 }
 
 .section-title {
   font-family: var(--font-display);
-  font-size: clamp(36px, 6vw, 56px);
-  line-height: 1;
-  letter-spacing: 0.04em;
-  color: var(--white);
-  margin-bottom: 1.5rem;
+  font-size: clamp(36px, 5vw, 60px);
+  line-height: 1; letter-spacing: 0.03em;
+  color: var(--black); margin-bottom: 1rem;
 }
 
-.section-body {
-  font-size: 1.05rem;
-  color: var(--white-dim);
-  line-height: 1.8;
-  max-width: 680px;
+.section-sub {
+  font-size: 1.05rem; color: var(--text-mid); max-width: 560px; line-height: 1.7;
 }
 
-/* NOT AVERAGE SECTION */
-.not-average {
-  background: var(--black-soft);
-  border-top: 1px solid var(--gold-dim);
-  border-bottom: 1px solid var(--gold-dim);
-  padding: 5rem 1.5rem;
+/* ── NOT AVERAGE ── */
+.not-average { background: var(--cream); }
+
+.stanza-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+  align-items: center; margin-top: 3rem;
 }
 
-.not-average-inner {
-  max-width: 900px;
-  margin: 0 auto;
+.stanza-text {
+  font-size: 1.2rem; color: var(--text-mid); line-height: 2;
 }
 
-.stanza {
-  font-family: var(--font-serif);
-  font-size: clamp(1.2rem, 3vw, 1.6rem);
-  font-style: italic;
-  color: var(--white-dim);
-  line-height: 2;
-  margin-bottom: 2rem;
+.stanza-text strong { color: var(--gold); font-weight: 700; }
+
+.stanza-card {
+  background: var(--white); border-radius: var(--radius);
+  padding: 2.5rem; box-shadow: var(--shadow-lg);
 }
 
-.stanza strong {
-  color: var(--gold);
-  font-style: normal;
-  font-weight: 400;
+.stanza-card-title {
+  font-family: var(--font-display); font-size: 1.6rem;
+  letter-spacing: 0.04em; color: var(--black); margin-bottom: 1rem;
 }
 
-/* BENEFITS GRID */
+.stanza-card-body { font-size: 0.95rem; color: var(--text-mid); line-height: 1.8; }
+
+/* ── BENEFITS ── */
 .benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
   margin-top: 3rem;
 }
 
 .benefit-card {
-  background: var(--black-card);
-  border: 1px solid var(--gold-dim);
-  padding: 2rem;
-  transition: border-color 0.2s;
+  background: var(--white); border-radius: var(--radius);
+  padding: 2rem; box-shadow: var(--shadow);
+  border: 1.5px solid var(--gray-mid);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
 }
-.benefit-card:hover { border-color: var(--gold); }
+.benefit-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--gold); }
 
-.benefit-icon {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  display: block;
+.benefit-icon-wrap {
+  width: 52px; height: 52px; background: var(--gold-pale);
+  border-radius: 14px; display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; margin-bottom: 1.25rem;
 }
 
 .benefit-title {
-  font-family: var(--font-display);
-  font-size: 1.3rem;
-  letter-spacing: 0.06em;
-  color: var(--gold);
-  margin-bottom: 0.5rem;
+  font-weight: 800; font-size: 1rem; color: var(--black); margin-bottom: 0.5rem;
 }
 
-.benefit-body {
-  font-size: 0.92rem;
-  color: var(--white-dim);
-  line-height: 1.7;
+.benefit-body { font-size: 0.9rem; color: var(--text-mid); line-height: 1.65; }
+
+/* ── WHAT YOU'LL DO ── */
+.do-section { background: var(--gray-light); }
+
+.checklist-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2.5rem;
 }
 
-/* WHAT YOU'LL DO */
-.checklist {
-  list-style: none;
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
+.check-item {
+  display: flex; align-items: flex-start; gap: 0.85rem;
+  background: var(--white); border-radius: var(--radius-sm);
+  padding: 1.25rem; box-shadow: var(--shadow);
+  font-size: 0.95rem; font-weight: 500; color: var(--text-dark);
 }
 
-.checklist li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.85rem;
-  font-size: 1rem;
-  color: var(--white-dim);
-  line-height: 1.6;
+.check-box {
+  width: 22px; height: 22px; min-width: 22px;
+  background: var(--gold); border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--white); font-size: 0.7rem; font-weight: 700; margin-top: 1px;
 }
 
-.checklist li::before {
-  content: '';
-  width: 18px;
-  height: 18px;
-  min-width: 18px;
-  border: 1.5px solid var(--gold);
-  background: transparent;
-  margin-top: 3px;
-  position: relative;
-}
-
-.checklist li.checked::before {
-  background: var(--gold);
-}
-
-/* WHO WE'RE LOOKING FOR */
+/* ── WHO WE WANT ── */
 .traits-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1rem;
-  margin-top: 2rem;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2.5rem;
 }
 
-.trait {
-  background: var(--black-card);
-  border: 1px solid var(--gold-dim);
-  padding: 1.25rem 1.5rem;
-  font-size: 0.92rem;
-  color: var(--white);
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
+.trait-card {
+  background: var(--cream); border-radius: var(--radius-sm);
+  padding: 1.5rem; text-align: center;
+  border: 1.5px solid var(--gray-mid);
+  transition: border-color 0.2s, background 0.2s;
+}
+.trait-card:hover { border-color: var(--gold); background: var(--gold-pale); }
+
+.trait-icon { font-size: 1.8rem; margin-bottom: 0.75rem; display: block; }
+.trait-label { font-size: 0.9rem; font-weight: 700; color: var(--text-dark); }
+
+/* ── HOW IT WORKS ── */
+.steps-row {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
+  margin-top: 3rem; position: relative;
 }
 
-.trait span { color: var(--gold); font-size: 1.1rem; }
-
-/* HOW IT WORKS */
-.steps {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  margin-top: 3rem;
-  position: relative;
+.steps-row::before {
+  content: ''; position: absolute;
+  top: 36px; left: 10%; right: 10%; height: 2px;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
+  z-index: 0;
 }
 
-.steps::before {
-  content: '';
-  position: absolute;
-  left: 24px;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background: var(--gold-dim);
+.step-card {
+  background: var(--white); border-radius: var(--radius);
+  padding: 2rem 1.5rem; text-align: center;
+  box-shadow: var(--shadow); position: relative; z-index: 1;
+  border: 1.5px solid var(--gray-mid);
 }
 
-.step {
-  display: flex;
-  gap: 2rem;
-  align-items: flex-start;
-  padding-bottom: 2.5rem;
-  position: relative;
+.step-num {
+  width: 48px; height: 48px;
+  background: var(--gold); color: var(--white);
+  border-radius: 50%; font-weight: 900; font-size: 1.1rem;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1.25rem;
 }
 
-.step-number {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  letter-spacing: 0.1em;
-  color: var(--black);
-  background: var(--gold);
-  width: 48px;
-  height: 48px;
-  min-width: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 1;
+.step-title { font-weight: 800; font-size: 1rem; color: var(--black); margin-bottom: 0.5rem; }
+.step-body { font-size: 0.85rem; color: var(--text-mid); line-height: 1.6; }
+
+/* ── SOCIAL PROOF ── */
+.proof-bar {
+  background: var(--cream-dark); padding: 3rem 2rem; text-align: center;
+  border-top: 1px solid var(--gray-mid); border-bottom: 1px solid var(--gray-mid);
 }
 
-.step-content { padding-top: 0.4rem; }
-
-.step-title {
-  font-family: var(--font-display);
-  font-size: 1.4rem;
-  letter-spacing: 0.06em;
-  color: var(--white);
-  margin-bottom: 0.3rem;
+.proof-text {
+  font-family: var(--font-serif); font-style: italic;
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem); color: var(--text-mid);
+  max-width: 700px; margin: 0 auto; line-height: 1.7;
 }
 
-.step-body {
-  font-size: 0.92rem;
-  color: var(--white-dim);
-  line-height: 1.6;
+.proof-text strong { color: var(--gold); font-style: normal; font-family: var(--font-body); font-weight: 700; }
+
+/* ── FAQ ── */
+.faq-section { background: var(--gray-light); }
+
+.faq-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2.5rem;
 }
 
-/* SOCIAL PROOF */
-.social-proof {
-  background: var(--black-soft);
-  border-top: 1px solid var(--gold-dim);
-  border-bottom: 1px solid var(--gold-dim);
-  padding: 3rem 1.5rem;
-  text-align: center;
+.faq-card {
+  background: var(--white); border-radius: var(--radius);
+  padding: 2rem; box-shadow: var(--shadow);
 }
 
-.social-proof-text {
-  font-family: var(--font-serif);
-  font-size: clamp(1rem, 2.5vw, 1.25rem);
-  font-style: italic;
-  color: var(--white-dim);
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.7;
-}
+.faq-q { font-weight: 800; font-size: 0.95rem; color: var(--black); margin-bottom: 0.6rem; }
+.faq-a { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; }
 
-.social-proof-text strong { color: var(--gold); font-style: normal; }
-
-/* FAQ */
-.faq-list {
-  margin-top: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  border-top: 1px solid var(--gold-dim);
-}
-
-.faq-item {
-  border-bottom: 1px solid var(--gold-dim);
-  padding: 1.5rem 0;
-}
-
-.faq-q {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  letter-spacing: 0.05em;
-  color: var(--white);
-  margin-bottom: 0.6rem;
-}
-
-.faq-a {
-  font-size: 0.95rem;
-  color: var(--white-dim);
-  line-height: 1.7;
-}
-
-/* CLOSING CTA */
+/* ── CLOSING CTA ── */
 .closing {
-  background: radial-gradient(ellipse at 50% 100%, rgba(201,168,76,0.1) 0%, transparent 70%);
-  border-top: 1px solid var(--gold-dim);
-  padding: 6rem 1.5rem;
-  text-align: center;
+  background: var(--black);
+  padding: 7rem 2rem; text-align: center;
+  position: relative; overflow: hidden;
 }
 
-.closing-stanza {
-  font-family: var(--font-serif);
-  font-size: clamp(1.3rem, 3vw, 1.8rem);
-  font-style: italic;
-  color: var(--white-dim);
-  line-height: 2.2;
-  margin-bottom: 2.5rem;
+.closing::before {
+  content: ''; position: absolute;
+  top: -200px; left: 50%; transform: translateX(-50%);
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(200,155,60,0.15) 0%, transparent 70%);
+  pointer-events: none;
 }
 
-.closing-stanza strong {
-  color: var(--white);
-  font-style: normal;
-  display: block;
-  font-size: 1.05em;
-}
-
-.urgency {
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 2rem;
-  display: block;
+.closing-eyebrow {
+  display: inline-block;
+  background: rgba(200,155,60,0.15); color: var(--gold);
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.15em;
+  text-transform: uppercase; padding: 0.4rem 1rem; border-radius: 100px;
+  margin-bottom: 1.5rem;
 }
 
 .closing h2 {
   font-family: var(--font-display);
-  font-size: clamp(36px, 7vw, 64px);
-  letter-spacing: 0.04em;
-  color: var(--white);
-  line-height: 1;
-  margin-bottom: 2.5rem;
+  font-size: clamp(44px, 7vw, 80px);
+  line-height: 0.95; letter-spacing: 0.03em;
+  color: var(--white); margin-bottom: 1.5rem;
 }
 
-/* FORM SECTION */
-.form-section {
-  background: var(--black-card);
-  border: 1px solid var(--gold-dim);
-  padding: 3rem 2rem;
-  max-width: 600px;
-  margin: 0 auto;
+.closing h2 span { color: var(--gold); }
+
+.closing-sub {
+  font-size: 1.05rem; color: rgba(255,255,255,0.6);
+  max-width: 500px; margin: 0 auto 2.5rem; line-height: 1.7;
+}
+
+.urgency-badge {
+  display: inline-block; background: rgba(200,155,60,0.15);
+  border: 1px solid rgba(200,155,60,0.3); color: var(--gold);
+  font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; padding: 0.5rem 1.25rem; border-radius: 100px;
+  margin-bottom: 3rem;
+}
+
+/* ── FORM ── */
+.form-wrap {
+  background: var(--white); border-radius: 24px;
+  padding: 3rem; max-width: 580px; margin: 0 auto;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.4);
+  text-align: left;
 }
 
 .form-title {
-  font-family: var(--font-display);
-  font-size: 1.8rem;
-  letter-spacing: 0.08em;
-  color: var(--gold);
-  text-align: center;
-  margin-bottom: 0.5rem;
+  font-family: var(--font-display); font-size: 2rem;
+  letter-spacing: 0.06em; color: var(--black);
+  text-align: center; margin-bottom: 0.35rem;
 }
 
 .form-sub {
-  text-align: center;
-  font-size: 0.88rem;
-  color: var(--white-faint);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  text-align: center; font-size: 0.85rem; color: var(--text-light);
   margin-bottom: 2rem;
 }
 
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  margin-bottom: 1rem;
-}
+.form-group { margin-bottom: 1rem; }
 
 .form-group label {
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold);
+  display: block; font-size: 0.75rem; font-weight: 700;
+  color: var(--text-dark); letter-spacing: 0.08em;
+  text-transform: uppercase; margin-bottom: 0.4rem;
 }
 
 .form-group input,
 .form-group select {
-  background: var(--black);
-  border: 1px solid var(--gold-dim);
-  color: var(--white);
-  font-family: var(--font-sans);
-  font-size: 0.95rem;
-  padding: 0.75rem 1rem;
-  outline: none;
-  transition: border-color 0.2s;
-  -webkit-appearance: none;
-  appearance: none;
-  width: 100%;
+  width: 100%; background: var(--gray-light);
+  border: 1.5px solid var(--gray-mid); border-radius: var(--radius-sm);
+  color: var(--text-dark); font-family: var(--font-body);
+  font-size: 0.95rem; padding: 0.75rem 1rem; outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  -webkit-appearance: none; appearance: none;
 }
 
 .form-group input:focus,
-.form-group select:focus { border-color: var(--gold); }
+.form-group select:focus { border-color: var(--gold); background: var(--white); }
 
-.form-group select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C9A84C' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; }
+.form-group input::placeholder { color: var(--text-light); }
 
-.form-group input::placeholder { color: rgba(245,240,232,0.25); }
+.form-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C89B3C' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem;
+}
 
 .form-submit {
-  width: 100%;
-  background: var(--gold);
-  color: var(--black);
-  font-family: var(--font-display);
-  font-size: 1.3rem;
-  letter-spacing: 0.15em;
-  padding: 1rem;
-  border: none;
-  cursor: pointer;
-  transition: background 0.2s;
-  margin-top: 0.5rem;
+  width: 100%; background: var(--gold); color: var(--white);
+  font-family: var(--font-body); font-weight: 800; font-size: 1.05rem;
+  padding: 1rem; border-radius: 100px; border: none; cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(200,155,60,0.4); margin-top: 0.5rem;
+  letter-spacing: 0.03em;
 }
-.form-submit:hover { background: var(--gold-light); }
-.form-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+.form-submit:hover { background: var(--gold-light); transform: translateY(-1px); box-shadow: 0 8px 32px rgba(200,155,60,0.5); }
+.form-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
 
 .form-agree {
-  font-size: 0.78rem;
-  color: var(--white-faint);
-  text-align: center;
-  margin-top: 1rem;
-  line-height: 1.5;
+  font-size: 0.75rem; color: var(--text-light);
+  text-align: center; margin-top: 1rem; line-height: 1.5;
 }
 
-.form-success {
-  display: none;
-  text-align: center;
-  padding: 2rem;
-}
+.form-success { display: none; text-align: center; padding: 2rem 0; }
+.form-success-icon { font-size: 3rem; margin-bottom: 1rem; display: block; }
+.form-success h3 { font-family: var(--font-display); font-size: 2.2rem; letter-spacing: 0.06em; color: var(--black); margin-bottom: 0.75rem; }
+.form-success p { font-size: 1rem; color: var(--text-mid); line-height: 1.7; }
 
-.form-success h3 {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  letter-spacing: 0.08em;
-  color: var(--gold);
-  margin-bottom: 0.75rem;
-}
-
-.form-success p {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 1.1rem;
-  color: var(--white-dim);
-  line-height: 1.7;
-}
-
-/* FOOTER */
+/* ── FOOTER ── */
 footer {
-  padding: 2.5rem 1.5rem;
-  border-top: 1px solid var(--gold-dim);
-  text-align: center;
+  background: var(--black-soft); padding: 2.5rem 2rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 1rem;
 }
 
-.footer-logo { height: 36px; width: auto; margin-bottom: 1rem; opacity: 0.7; }
+.footer-logo { height: 32px; width: auto; opacity: 0.6; }
 
-.footer-text {
-  font-size: 0.75rem;
-  color: var(--white-faint);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
+.footer-text { font-size: 0.75rem; color: rgba(255,255,255,0.35); letter-spacing: 0.1em; text-transform: uppercase; }
 
-/* MOBILE */
-@media (max-width: 600px) {
+/* ── MOBILE ── */
+@media (max-width: 768px) {
   nav { padding: 0.85rem 1rem; }
-  .nav-logo img { height: 32px; }
-  .nav-cta { font-size: 0.82rem; padding: 0.45rem 1rem; }
+  .nav-logo img { height: 30px; }
+
+  .hero { grid-template-columns: 1fr; gap: 2rem; padding: 6rem 1.25rem 3rem; }
+  .hero-right { min-height: 280px; padding: 2rem; }
+  .hero-right-logo { width: 140px; }
+
+  .benefits-grid { grid-template-columns: 1fr; }
+  .stanza-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .checklist-grid { grid-template-columns: 1fr; }
+  .traits-grid { grid-template-columns: 1fr 1fr; }
+  .steps-row { grid-template-columns: 1fr 1fr; }
+  .steps-row::before { display: none; }
+  .faq-grid { grid-template-columns: 1fr; }
+
   .form-row { grid-template-columns: 1fr; }
-  .steps::before { left: 20px; }
-  .step-number { width: 40px; height: 40px; min-width: 40px; }
+  .form-wrap { padding: 2rem 1.5rem; border-radius: 16px; }
+
+  .trust-bar { gap: 1.25rem; }
+  .trust-item { font-size: 0.72rem; }
+
+  footer { flex-direction: column; text-align: center; }
 }
 
-/* REDUCED MOTION */
+@media (max-width: 480px) {
+  .traits-grid { grid-template-columns: 1fr; }
+  .steps-row { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 44px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
 }
@@ -636,197 +504,237 @@ footer {
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+  <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="nav-logo">
     <img src="logo2.png" alt="Greek Empire" loading="lazy">
   </a>
-  <a href="#apply" class="nav-cta">Apply Now</a>
+  <a href="#apply" class="nav-cta">Apply Now →</a>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <img src="logo.png" alt="Greek Empire" class="hero-logo">
-  <span class="hero-eyebrow">Campus Ambassador Program</span>
-  <h1>The Best Campus Job<br><span>You Never Knew</span><br>Existed.</h1>
-  <p class="hero-sub">Get Paid to Build Connections, Grow Your Resume, and Represent Greek Empire on Your Campus.</p>
-  <p class="hero-intro">Forget another part-time job behind a register. As a Greek Empire Campus Ambassador, you'll work with student clubs, organizations, sports teams, and campus leaders to bring their custom apparel and merch ideas to life — all while gaining real-world experience and earning money on your own schedule.</p>
-  <div class="hero-pills">
-    <div class="pill">💰 Earn on Every Order You Bring In</div>
-    <div class="pill">📅 Flexible Around Your Classes</div>
-    <div class="pill">🎓 Real Business Experience</div>
+<div style="max-width:1200px;margin:0 auto;padding:7rem 2rem 4rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;" class="hero-grid">
+  <div>
+    <div class="hero-tag">🏛️ Campus Ambassador Program</div>
+    <h1 style="font-family:var(--font-display);font-size:clamp(52px,6vw,80px);line-height:0.95;letter-spacing:0.02em;color:var(--black);margin-bottom:1.25rem;">
+      THE BEST<br><span style="color:var(--gold);">CAMPUS JOB</span><br>YOU NEVER<br>KNEW EXISTED.
+    </h1>
+    <p style="font-size:1.05rem;color:var(--text-mid);line-height:1.7;max-width:460px;margin-bottom:2rem;">Get paid to build connections, grow your resume, and help student organizations create apparel they'll actually want to wear.</p>
+    <div class="hero-badges">
+      <div class="badge">💰 Make Extra Money</div>
+      <div class="badge">🎓 Build Your Resume</div>
+      <div class="badge">📅 Flexible Around Classes</div>
+    </div>
+    <a href="#apply" class="btn-hero">Apply in Under 2 Minutes →</a>
+    <div class="hero-checks">
+      <div class="hero-check">No experience required</div>
+      <div class="hero-check">Flexible schedule — work around classes</div>
+      <div class="hero-check">Takes less than 2 minutes to apply</div>
+    </div>
   </div>
-  <a href="#apply" class="btn-primary">Apply in Under 2 Minutes</a>
-  <span class="btn-note">No experience required &nbsp;·&nbsp; Takes 2 minutes</span>
-</section>
+  <div style="background:linear-gradient(135deg,var(--gold-pale) 0%,var(--cream-dark) 100%);border-radius:24px;padding:3rem 2rem;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:500px;box-shadow:var(--shadow-lg);">
+    <img src="logo.png" alt="Greek Empire" style="width:220px;height:auto;margin-bottom:2.5rem;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;width:100%;">
+      <div style="background:var(--white);border-radius:12px;padding:1.5rem;text-align:center;box-shadow:var(--shadow);">
+        <span style="font-family:var(--font-display);font-size:2.2rem;color:var(--gold);letter-spacing:0.04em;display:block;line-height:1;">48+</span>
+        <span style="font-size:0.78rem;color:var(--text-light);font-weight:500;margin-top:0.25rem;display:block;">Campus Markets</span>
+      </div>
+      <div style="background:var(--white);border-radius:12px;padding:1.5rem;text-align:center;box-shadow:var(--shadow);">
+        <span style="font-family:var(--font-display);font-size:2.2rem;color:var(--gold);letter-spacing:0.04em;display:block;line-height:1;">$0</span>
+        <span style="font-size:0.78rem;color:var(--text-light);font-weight:500;margin-top:0.25rem;display:block;">Upfront Cost</span>
+      </div>
+      <div style="background:var(--white);border-radius:12px;padding:1.5rem;text-align:center;box-shadow:var(--shadow);">
+        <span style="font-family:var(--font-display);font-size:2.2rem;color:var(--gold);letter-spacing:0.04em;display:block;line-height:1;">∞</span>
+        <span style="font-size:0.78rem;color:var(--text-light);font-weight:500;margin-top:0.25rem;display:block;">Earning Potential</span>
+      </div>
+      <div style="background:var(--white);border-radius:12px;padding:1.5rem;text-align:center;box-shadow:var(--shadow);">
+        <span style="font-family:var(--font-display);font-size:2.2rem;color:var(--gold);letter-spacing:0.04em;display:block;line-height:1;">2min</span>
+        <span style="font-size:0.78rem;color:var(--text-light);font-weight:500;margin-top:0.25rem;display:block;">To Apply</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><span>✓</span> Trusted Nationwide</div>
+  <div class="trust-item"><span>✓</span> SEC · Big Ten · ACC · Big 12</div>
+  <div class="trust-item"><span>✓</span> No Inventory Required</div>
+  <div class="trust-item"><span>✓</span> Real Commission</div>
+  <div class="trust-item"><span>✓</span> Flexible Schedule</div>
+</div>
 
 <!-- NOT AVERAGE -->
-<div class="not-average">
-  <div class="not-average-inner">
-    <span class="section-eyebrow">This Isn't Your Average Campus Job</span>
-    <div class="stanza">
-      You're already meeting people every day.<br>
-      You're in class. You're involved on campus.<br>
-      You're attending club meetings.<br>
-      <strong>You're making connections.</strong>
+<div class="section not-average">
+  <div class="section-inner">
+    <span class="section-tag">This Isn't Your Average Campus Job</span>
+    <div class="stanza-grid">
+      <div>
+        <h2 class="section-title" style="margin-bottom:1.5rem;">You're Already<br>Making<br><span style="color:var(--gold);">Connections.</span></h2>
+        <div class="stanza-text">
+          You're in class. You're involved on campus.<br>
+          You're attending club meetings.<br>
+          <strong>Why not get paid for it?</strong>
+        </div>
+      </div>
+      <div class="stanza-card">
+        <div class="stanza-card-title">Forget the Register.</div>
+        <p class="stanza-card-body">As a Greek Empire Campus Ambassador, you'll introduce student clubs, organizations, sports teams, and campus leaders to custom apparel and merch they'll actually want to wear. We handle the design, production, and delivery. You build relationships and earn on every order.</p>
+      </div>
     </div>
-    <p class="section-body">Why not turn those connections into experience that actually helps you after graduation? As a Greek Empire Campus Ambassador, you'll introduce campus organizations to custom apparel and promotional products they'll be excited to wear. We handle the design, production, and delivery — you build relationships, represent the brand, and grow your professional skills along the way.</p>
   </div>
 </div>
 
 <!-- BENEFITS -->
-<section>
-  <span class="section-eyebrow">Why Students Love Being Ambassadors</span>
-  <h2 class="section-title">What's In It For You</h2>
-  <div class="benefits-grid">
-    <div class="benefit-card">
-      <span class="benefit-icon">💰</span>
-      <div class="benefit-title">Make Extra Money</div>
-      <p class="benefit-body">Earn while helping organizations create custom merchandise for events, fundraisers, competitions, and campus life.</p>
-    </div>
-    <div class="benefit-card">
-      <span class="benefit-icon">🎯</span>
-      <div class="benefit-title">Build a Resume That Stands Out</div>
-      <p class="benefit-body">Graduate with real experience in marketing, sales, networking, and business development — not just another campus job.</p>
-    </div>
-    <div class="benefit-card">
-      <span class="benefit-icon">🤝</span>
-      <div class="benefit-title">Expand Your Network</div>
-      <p class="benefit-body">Meet organization presidents, club officers, student leaders, and campus influencers while building valuable professional connections.</p>
-    </div>
-    <div class="benefit-card">
-      <span class="benefit-icon">📅</span>
-      <div class="benefit-title">Work When It Works for You</div>
-      <p class="benefit-body">No fixed schedule. Work between classes, after practice, or whenever you have time.</p>
-    </div>
-    <div class="benefit-card">
-      <span class="benefit-icon">👕</span>
-      <div class="benefit-title">Represent an Exciting Brand</div>
-      <p class="benefit-body">Receive ambassador resources and exclusive gear while helping organizations create apparel people actually want to wear.</p>
-    </div>
-    <div class="benefit-card">
-      <span class="benefit-icon">🚀</span>
-      <div class="benefit-title">Learn Skills That Last</div>
-      <p class="benefit-body">Develop confidence, communication, leadership, and business skills you'll use long after graduation.</p>
-    </div>
-  </div>
-</section>
-
-<!-- WHAT YOU'LL DO -->
-<section style="padding-top:0;">
-  <span class="section-eyebrow">The Role</span>
-  <h2 class="section-title">What You'll Be Doing</h2>
-  <ul class="checklist">
-    <li class="checked">Meet student organizations across campus</li>
-    <li class="checked">Help clubs and teams create custom apparel and promotional products</li>
-    <li class="checked">Share ideas and inspiration through social media</li>
-    <li class="checked">Connect organizations with our team</li>
-    <li class="checked">Build relationships with student leaders</li>
-    <li class="checked">Get rewarded for helping organizations place orders</li>
-  </ul>
-</section>
-
-<!-- WHO WE'RE LOOKING FOR -->
-<section style="padding-top:0;">
-  <span class="section-eyebrow">Who We Want</span>
-  <h2 class="section-title">Who We're Looking For</h2>
-  <p class="section-body">We're looking for students who are active on campus, motivated, and comfortable meeting new people. Whether you're involved in academic clubs, student government, club sports, cultural organizations, performing arts, volunteer groups, or campus events — this opportunity is for students who like making an impact.</p>
-  <div class="traits-grid">
-    <div class="trait"><span>✨</span> Love meeting new people</div>
-    <div class="trait"><span>✨</span> Active on campus</div>
-    <div class="trait"><span>✨</span> Enjoy helping others</div>
-    <div class="trait"><span>✨</span> Want real-world experience</div>
-    <div class="trait"><span>✨</span> Motivated and outgoing</div>
-    <div class="trait"><span>✨</span> Dependable and reliable</div>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section style="padding-top:0;">
-  <span class="section-eyebrow">The Process</span>
-  <h2 class="section-title">How It Works</h2>
-  <div class="steps">
-    <div class="step">
-      <div class="step-number">01</div>
-      <div class="step-content">
-        <div class="step-title">Apply</div>
-        <p class="step-body">Complete a quick application in under two minutes. No experience required.</p>
+<div class="section" style="background:var(--white);">
+  <div class="section-inner">
+    <span class="section-tag">Why Students Love This</span>
+    <h2 class="section-title">What's In It<br>For You</h2>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon-wrap">💰</div>
+        <div class="benefit-title">Make Extra Money</div>
+        <p class="benefit-body">Earn while helping organizations create custom merchandise for events, fundraisers, competitions, and campus life.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon-wrap">🎯</div>
+        <div class="benefit-title">Build a Resume That Stands Out</div>
+        <p class="benefit-body">Graduate with real experience in marketing, sales, and business development — not just another campus job.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon-wrap">🤝</div>
+        <div class="benefit-title">Expand Your Network</div>
+        <p class="benefit-body">Meet org presidents, club officers, and campus influencers while building real professional connections.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon-wrap">📅</div>
+        <div class="benefit-title">Work When It Works for You</div>
+        <p class="benefit-body">No fixed schedule. Work between classes, after practice, or whenever you have time.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon-wrap">👕</div>
+        <div class="benefit-title">Represent an Exciting Brand</div>
+        <p class="benefit-body">Receive exclusive ambassador gear and resources while helping organizations create apparel people actually want to wear.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon-wrap">🚀</div>
+        <div class="benefit-title">Learn Skills That Last</div>
+        <p class="benefit-body">Develop communication, leadership, and business skills you'll use long after graduation.</p>
       </div>
     </div>
-    <div class="step">
-      <div class="step-number">02</div>
-      <div class="step-content">
+  </div>
+</div>
+
+<!-- WHAT YOU'LL DO -->
+<div class="section do-section">
+  <div class="section-inner">
+    <span class="section-tag">The Role</span>
+    <h2 class="section-title">What You'll<br>Be Doing</h2>
+    <div class="checklist-grid">
+      <div class="check-item"><div class="check-box">✓</div>Meet student organizations across campus</div>
+      <div class="check-item"><div class="check-box">✓</div>Help clubs and teams create custom apparel</div>
+      <div class="check-item"><div class="check-box">✓</div>Share ideas and inspiration on social media</div>
+      <div class="check-item"><div class="check-box">✓</div>Connect organizations with our team</div>
+      <div class="check-item"><div class="check-box">✓</div>Build relationships with student leaders</div>
+      <div class="check-item"><div class="check-box">✓</div>Get rewarded for helping orgs place orders</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHO WE WANT -->
+<div class="section" style="background:var(--white);">
+  <div class="section-inner">
+    <span class="section-tag">Who We're Looking For</span>
+    <h2 class="section-title">Sound Like<br><span style="color:var(--gold);">You?</span></h2>
+    <p class="section-sub" style="margin-bottom:0;">Whether you're in Greek life, student government, club sports, cultural orgs, honor societies, or anything else — if you're connected on campus, we want to talk.</p>
+    <div class="traits-grid">
+      <div class="trait-card"><span class="trait-icon">😊</span><div class="trait-label">Love Meeting New People</div></div>
+      <div class="trait-card"><span class="trait-icon">🎓</span><div class="trait-label">Active on Campus</div></div>
+      <div class="trait-card"><span class="trait-icon">🤝</span><div class="trait-label">Enjoy Helping Others</div></div>
+      <div class="trait-card"><span class="trait-icon">💼</span><div class="trait-label">Want Real Experience</div></div>
+      <div class="trait-card"><span class="trait-icon">⚡</span><div class="trait-label">Motivated & Outgoing</div></div>
+      <div class="trait-card"><span class="trait-icon">✅</div><div class="trait-label">Dependable & Reliable</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="section" style="background:var(--cream);">
+  <div class="section-inner">
+    <span class="section-tag">Simple Process</span>
+    <h2 class="section-title">How It Works</h2>
+    <div class="steps-row">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <div class="step-title">Apply</div>
+        <p class="step-body">Complete a quick application in under 2 minutes. No experience required.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
         <div class="step-title">Connect</div>
         <p class="step-body">Meet virtually with our team and learn how the program works.</p>
       </div>
-    </div>
-    <div class="step">
-      <div class="step-number">03</div>
-      <div class="step-content">
+      <div class="step-card">
+        <div class="step-num">3</div>
         <div class="step-title">Launch</div>
-        <p class="step-body">Receive your onboarding, ambassador resources, and everything you need to succeed.</p>
+        <p class="step-body">Get your ambassador kit, resources, and everything you need to succeed.</p>
       </div>
-    </div>
-    <div class="step">
-      <div class="step-number">04</div>
-      <div class="step-content">
-        <div class="step-title">Start Building</div>
-        <p class="step-body">Help campus organizations create amazing merch, gain valuable experience, and earn while you do it.</p>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <div class="step-title">Start Earning</div>
+        <p class="step-body">Help campus organizations create amazing merch and earn on every order.</p>
       </div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- SOCIAL PROOF -->
-<div class="social-proof">
-  <p class="social-proof-text">Greek Empire ambassadors are active on campuses across the <strong>SEC, Big Ten, ACC, and Big 12</strong> — and we're growing every semester.</p>
+<!-- PROOF BAR -->
+<div class="proof-bar">
+  <p class="proof-text">Greek Empire ambassadors are active on campuses across the <strong>SEC, Big Ten, ACC, and Big 12</strong> — and we're growing every semester.</p>
 </div>
 
 <!-- FAQ -->
-<section>
-  <span class="section-eyebrow">Questions</span>
-  <h2 class="section-title">Frequently Asked</h2>
-  <div class="faq-list">
-    <div class="faq-item">
-      <div class="faq-q">Do I need sales experience?</div>
-      <p class="faq-a">Nope. We'll teach you everything you need to know.</p>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">How much time does it take?</div>
-      <p class="faq-a">As much or as little as you want. Most ambassadors fit it around their existing schedules — a few hours a week.</p>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Who can I work with?</div>
-      <p class="faq-a">Student clubs, sports teams, honor societies, performing arts groups, cultural organizations, campus events, academic organizations, and more.</p>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">How do I get paid?</div>
-      <p class="faq-a">Every time an organization you bring in places an order with Greek Empire, you earn. No order cap, no ceiling.</p>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Is there a limit to how much I can earn?</div>
-      <p class="faq-a">No. Your earning potential grows with the number of organizations you connect.</p>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">What will I gain from this?</div>
-      <p class="faq-a">Real sales and marketing experience, new connections, flexible income, and a brand you'll be proud to rep.</p>
+<div class="section faq-section">
+  <div class="section-inner">
+    <span class="section-tag">Questions</span>
+    <h2 class="section-title">Frequently<br>Asked</h2>
+    <div class="faq-grid">
+      <div class="faq-card">
+        <div class="faq-q">Do I need sales experience?</div>
+        <p class="faq-a">Nope. We'll teach you everything you need to know.</p>
+      </div>
+      <div class="faq-card">
+        <div class="faq-q">How much time does it take?</div>
+        <p class="faq-a">As much or as little as you want. Most ambassadors fit it around their existing schedule — a few hours a week.</p>
+      </div>
+      <div class="faq-card">
+        <div class="faq-q">How do I get paid?</div>
+        <p class="faq-a">Every time an organization you bring in places an order with Greek Empire, you earn. No cap, no ceiling.</p>
+      </div>
+      <div class="faq-card">
+        <div class="faq-q">Who can I work with?</div>
+        <p class="faq-a">Any campus org — Greek life, club sports, student government, cultural organizations, honor societies, event committees, and more.</p>
+      </div>
+      <div class="faq-card">
+        <div class="faq-q">Is there a limit to how much I can earn?</div>
+        <p class="faq-a">No. Your earning potential grows with the number of organizations you connect.</p>
+      </div>
+      <div class="faq-card">
+        <div class="faq-q">What will I gain from this?</div>
+        <p class="faq-a">Real sales and marketing experience, new connections, flexible income, and a brand you'll be proud to rep.</p>
+      </div>
     </div>
   </div>
-</section>
+</div>
 
 <!-- CLOSING CTA -->
 <div class="closing" id="apply">
-  <div class="closing-stanza">
-    <strong>Build your resume.</strong>
-    Grow your network.<br>
-    Gain experience employers actually care about.<br>
-    <strong>Make money while you're doing it.</strong>
-  </div>
-  <span class="urgency">Applications are limited — we're only selecting a small number of ambassadors at each campus</span>
-  <h2>Join Greek Empire<br>Today.</h2>
+  <div class="closing-eyebrow">Ready to Get Started?</div>
+  <h2>Make An Impact<br>On <span>Your Campus.</span></h2>
+  <p class="closing-sub">Gain experience. Build your network. Make extra money. Help organizations stand out.</p>
+  <div class="urgency-badge">⚡ Applications are limited — only a small number selected per campus</div>
 
-  <!-- FORM -->
-  <div class="form-section">
-    <div class="form-title">Apply Now</div>
-    <div class="form-sub">Takes less than 2 minutes</div>
+  <div class="form-wrap">
+    <div class="form-title">Start My Application</div>
+    <div class="form-sub">Takes less than 2 minutes · No experience required</div>
     <form id="apply-form">
       <div class="form-row">
         <div class="form-group">
@@ -859,9 +767,9 @@ footer {
         <input type="text" id="instagram" name="instagram" placeholder="@yourhandle">
       </div>
       <div class="form-group">
-        <label for="referred_by">Referred By</label>
+        <label for="referred_by">How Did You Hear About Us?</label>
         <select id="referred_by" name="referred_by">
-          <option value="" disabled selected>How did you hear about us?</option>
+          <option value="" disabled selected>Select one</option>
           <option value="Ambassador">Ambassador</option>
           <option value="Instagram">Instagram</option>
           <option value="TikTok">TikTok</option>
@@ -871,11 +779,12 @@ footer {
           <option value="Other">Other</option>
         </select>
       </div>
-      <button type="submit" class="form-submit" id="submit-btn">SUBMIT APPLICATION</button>
+      <button type="submit" class="form-submit" id="submit-btn">Start My Application →</button>
       <p class="form-agree">By applying you agree to be contacted by the Greek Empire team.</p>
     </form>
     <div class="form-success" id="form-success">
-      <h3>Application Received.</h3>
+      <span class="form-success-icon">🎉</span>
+      <h3>Application Received!</h3>
       <p>Welcome to the network. Our team will be in touch shortly to schedule your intro call.</p>
     </div>
   </div>
@@ -888,22 +797,34 @@ footer {
 </footer>
 
 <script>
+// Mobile hero layout fix
+(function() {
+  if (window.innerWidth <= 768) {
+    var heroGrid = document.querySelector('.hero-grid');
+    if (heroGrid) {
+      heroGrid.style.gridTemplateColumns = '1fr';
+      heroGrid.style.padding = '6rem 1.25rem 3rem';
+      heroGrid.style.gap = '2rem';
+    }
+  }
+})();
+
 document.getElementById('apply-form').addEventListener('submit', async function(e) {
   e.preventDefault();
-  const btn = document.getElementById('submit-btn');
-  btn.textContent = 'SUBMITTING...';
+  var btn = document.getElementById('submit-btn');
+  btn.textContent = 'Submitting...';
   btn.disabled = true;
 
-  const payload = {
-    name_first:       document.getElementById('first_name').value.trim(),
-    name_last:        document.getElementById('last_name').value.trim(),
-    email:            document.getElementById('email').value.trim(),
-    phone:            document.getElementById('phone').value.trim(),
-    school_text:      document.getElementById('school').value.trim(),
-    chapter_text:     document.getElementById('chapter').value.trim(),
-    instagram_handle: document.getElementById('instagram').value.trim(),
+  var payload = {
+    name_first:        document.getElementById('first_name').value.trim(),
+    name_last:         document.getElementById('last_name').value.trim(),
+    email:             document.getElementById('email').value.trim(),
+    phone:             document.getElementById('phone').value.trim(),
+    school_text:       document.getElementById('school').value.trim(),
+    chapter_text:      document.getElementById('chapter').value.trim(),
+    instagram_handle:  document.getElementById('instagram').value.trim(),
     recruited_by_text: document.getElementById('referred_by').value,
-    source:           'landing-page-new'
+    source:            'ambassador-landing-new'
   };
 
   fetch('https://gxglrktbvumrpzhlogno.supabase.co/functions/v1/apply', {
@@ -911,52 +832,33 @@ document.getElementById('apply-form').addEventListener('submit', async function(
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload)
   })
-  .then(() => {
-    document.getElementById('apply-form').style.display = 'none';
-    document.getElementById('form-success').style.display = 'block';
-    if (typeof fbq !== 'undefined') fbq('track', 'Lead');
-    if (typeof ttq !== 'undefined') ttq.track('SubmitForm');
-  })
-  .catch(() => {
-    document.getElementById('apply-form').style.display = 'none';
-    document.getElementById('form-success').style.display = 'block';
-    if (typeof fbq !== 'undefined') fbq('track', 'Lead');
-    if (typeof ttq !== 'undefined') ttq.track('SubmitForm');
-  })
-  .finally(() => {
-    btn.textContent = 'SUBMIT APPLICATION';
+  .then(function() { showSuccess(); })
+  .catch(function() { showSuccess(); })
+  .finally(function() {
+    btn.textContent = 'Start My Application →';
     btn.disabled = false;
   });
+
+  function showSuccess() {
+    document.getElementById('apply-form').style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+    if (typeof fbq !== 'undefined') fbq('track', 'Lead');
+    if (typeof ttq !== 'undefined') ttq.track('SubmitForm');
+  }
 });
 </script>
 
-<!-- Meta Pixel Code -->
+<!-- Meta Pixel -->
 <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1566028055129817');
-fbq('track', 'PageView');
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1566028055129817');fbq('track','PageView');
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1566028055129817&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1566028055129817&ev=PageView&noscript=1"/></noscript>
 
-<!-- TikTok Pixel Code -->
+<!-- TikTok Pixel -->
 <script>
-!function (w, d, t) {
-  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=['page','track','identify','instances','debug','on','off','once','ready','alias','group','enableCookie','disableCookie'],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i='https://analytics.tiktok.com/i18n/pixel/events.js';ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement('script');o.type='text/javascript',o.async=!0,o.src=i+'?sdkid='+e+'&lib='+t;var a=document.getElementsByTagName('script')[0];a.parentNode.insertBefore(o,a)};
-  ttq.load('D90TB5BC77UBI6V94GFG');
-  ttq.page();
-}(window, document, 'ttq');
+!function(w,d,t){w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=['page','track','identify','instances','debug','on','off','once','ready','alias','group','enableCookie','disableCookie'],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i='https://analytics.tiktok.com/i18n/pixel/events.js';ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement('script');o.type='text/javascript',o.async=!0,o.src=i+'?sdkid='+e+'&lib='+t;var a=document.getElementsByTagName('script')[0];a.parentNode.insertBefore(o,a)};ttq.load('D90TB5BC77UBI6V94GFG');ttq.page()}(window,document,'ttq');
 </script>
-<!-- End TikTok Pixel Code -->
 
 </body>
 </html>
