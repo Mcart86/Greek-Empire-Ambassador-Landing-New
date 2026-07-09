@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Greek Empire — Campus Ambassador Program</title>
 <meta name="description" content="The best campus job you never knew existed. Get paid to represent Greek Empire on your campus.">
 
@@ -475,7 +475,7 @@ nav {
   width: 100%; background: var(--gray-light);
   border: 1.5px solid var(--gray-mid); border-radius: var(--radius-sm);
   color: var(--text-dark); font-family: var(--font-body);
-  font-size: 0.95rem; padding: 0.75rem 1rem; outline: none;
+  font-size: 16px; padding: 0.75rem 1rem; outline: none;
   transition: border-color 0.2s, background 0.2s;
   -webkit-appearance: none; appearance: none;
 }
@@ -631,7 +631,7 @@ footer {
 
   /* Sticky mobile apply bar */
   .mobile-apply-bar { display: flex; }
-  body { padding-bottom: 68px; }
+  body { padding-bottom: calc(68px + env(safe-area-inset-bottom)); }
 }
 
 @media (min-width: 769px) {
@@ -640,7 +640,7 @@ footer {
 
 .mobile-apply-bar {
   display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
-  padding: 0.7rem 1rem; background: rgba(10,10,10,0.96); backdrop-filter: blur(10px);
+  padding: 0.7rem 1rem calc(0.7rem + env(safe-area-inset-bottom)); background: rgba(10,10,10,0.96); backdrop-filter: blur(10px);
   border-top: 1px solid rgba(255,255,255,0.1);
   align-items: center; justify-content: center;
 }
@@ -800,41 +800,41 @@ footer {
       <div class="form-row">
         <div class="form-group">
           <label for="first_name">First Name *</label>
-          <input type="text" id="first_name" name="first_name" placeholder="First" required>
+          <input type="text" id="first_name" name="first_name" placeholder="First" autocomplete="given-name" required>
           <span class="form-error-msg" role="alert">Please enter your first name</span>
         </div>
         <div class="form-group">
           <label for="last_name">Last Name *</label>
-          <input type="text" id="last_name" name="last_name" placeholder="Last" required>
+          <input type="text" id="last_name" name="last_name" placeholder="Last" autocomplete="family-name" required>
           <span class="form-error-msg" role="alert">Please enter your last name</span>
         </div>
       </div>
       <div class="form-group">
         <label for="email">Email *</label>
-        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+        <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email" inputmode="email" required>
         <span class="form-error-msg" role="alert">Please enter a valid email address</span>
       </div>
       <div class="form-group">
         <label for="phone">Phone *</label>
-        <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" required>
+        <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" autocomplete="tel" inputmode="tel" required>
         <span class="form-error-msg" role="alert">Please enter your phone number</span>
       </div>
       <div class="form-group">
         <label for="school">School *</label>
-        <input type="text" id="school" name="school" placeholder="University / College" required>
+        <input type="text" id="school" name="school" placeholder="University / College" autocomplete="organization" required>
         <span class="form-error-msg" role="alert">Please enter your school</span>
       </div>
       <div class="form-group">
         <label for="chapter">Organization / Chapter</label>
-        <input type="text" id="chapter" name="chapter" placeholder="e.g. Alpha Phi, Student Gov, Club Soccer">
+        <input type="text" id="chapter" name="chapter" placeholder="e.g. Alpha Phi, Student Gov, Club Soccer" autocomplete="off">
       </div>
       <div class="form-group">
         <label for="instagram">Instagram Handle</label>
-        <input type="text" id="instagram" name="instagram" placeholder="@yourhandle">
+        <input type="text" id="instagram" name="instagram" placeholder="@yourhandle" autocomplete="off">
       </div>
       <div class="form-group">
         <label for="dob">Date of Birth *</label>
-        <input type="date" id="dob" name="dob" required>
+        <input type="date" id="dob" name="dob" autocomplete="bday" required>
         <span class="form-error-msg" role="alert">Please enter your date of birth</span>
       </div>
       <div class="form-group">
