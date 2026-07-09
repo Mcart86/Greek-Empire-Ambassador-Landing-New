@@ -49,6 +49,15 @@ nav {
   border-bottom: 1px solid var(--gray-mid);
 }
 .nav-logo img { height: 38px; width: auto; }
+
+.nav-links { display: flex; align-items: center; gap: 2rem; }
+.nav-links a {
+  color: var(--text-dark); text-decoration: none;
+  font-size: 0.9rem; font-weight: 600; letter-spacing: 0.01em;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--gold); }
+
 .nav-cta {
   background: linear-gradient(90deg, #C9A84C 0%, #E8C95A 25%, #FFE078 50%, #E8C95A 75%, #C9A84C 100%); color: #0e0e0c;
   font-family: var(--font-body); font-weight: 700; font-size: 0.88rem;
@@ -488,6 +497,7 @@ footer {
 @media (max-width: 768px) {
   nav { padding: 0.85rem 1rem; }
   .nav-logo img { height: 30px; }
+  .nav-links { display: none; }
 
   .section { padding: 3rem 1.25rem; }
 
@@ -583,6 +593,11 @@ footer {
   <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="nav-logo">
     <img src="logo2.png" alt="Greek Empire" loading="lazy">
   </a>
+  <div class="nav-links">
+    <a href="#benefits">Benefits</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#faq">FAQ</a>
+  </div>
   <a href="#apply" class="nav-cta">Apply Now →</a>
 </nav>
 
@@ -625,7 +640,7 @@ footer {
 </div>
 
 <!-- BENEFITS -->
-<div class="section" style="background:var(--white);">
+<div class="section" id="benefits" style="background:var(--white);">
   <div class="section-inner">
     <span class="section-tag">Why Students Love This</span>
     <h2 class="section-title">What's In It<br>For You</h2>
@@ -659,7 +674,7 @@ footer {
 </div>
 
 <!-- HOW IT WORKS -->
-<div class="section" style="background:var(--black);">
+<div class="section" id="how-it-works" style="background:var(--black);">
   <div class="section-inner">
     <span class="section-tag">Simple Process</span>
     <h2 class="section-title" style="color:var(--white);">How It Works</h2>
@@ -752,7 +767,7 @@ footer {
 </div>
 
 <!-- FAQ -->
-<div class="section faq-section">
+<div class="section faq-section" id="faq">
   <div class="section-inner">
     <span class="section-tag">Need to Know More?</span>
     <h2 class="section-title">Frequently Asked<br>Questions</h2>
