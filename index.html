@@ -150,20 +150,22 @@ nav {
   margin-top: 0.25rem; display: block;
 }
 
-/* ── TRUST BAR ── */
-.trust-bar {
-  background: var(--black); padding: 1.25rem 2rem;
-  display: flex; justify-content: center; align-items: center;
-  flex-wrap: wrap; gap: 2.5rem;
+/* ── MARQUEE TICKER ── */
+.marquee-strip {
+  background: linear-gradient(90deg, #C9A84C 0%, #E8C95A 25%, #FFE078 50%, #E8C95A 75%, #C9A84C 100%);
+  padding: 0.75rem 0; overflow: hidden; position: relative; z-index: 10;
 }
-
-.trust-item {
-  display: flex; align-items: center; gap: 0.5rem;
-  font-size: 0.82rem; font-weight: 600; color: rgba(255,255,255,0.7);
-  letter-spacing: 0.08em; text-transform: uppercase;
+.marquee-track {
+  display: flex; animation: marqueeScroll 30s linear infinite; width: max-content;
 }
-
-.trust-item span { color: var(--gold); font-size: 1rem; }
+.marquee-item {
+  font-family: var(--font-display); font-size: 0.95rem; letter-spacing: 0.35em;
+  text-transform: uppercase; color: #0e0e0c; white-space: nowrap;
+  padding: 0 2rem; display: flex; align-items: center; gap: 2rem;
+}
+.marquee-item::after { content: '·'; font-size: 1rem; opacity: 0.5; }
+@keyframes marqueeScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (max-width: 600px) { .marquee-item { font-size: 0.8rem; padding: 0 1.25rem; } }
 
 /* ── SECTION BASE ── */
 .section { padding: 6rem 2rem; }
@@ -530,7 +532,7 @@ footer {
       <div class="hero-check">Takes less than 2 minutes to apply</div>
     </div>
   </div>
-  <div style="background:linear-gradient(135deg,var(--gold-pale) 0%,var(--cream-dark) 100%);border-radius:24px;padding:3rem 2rem;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:500px;box-shadow:var(--shadow-lg);">
+  <div style="background:var(--black);border-radius:24px;padding:3rem 2rem;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:500px;box-shadow:var(--shadow-lg);">
     <img src="logo.png" alt="Greek Empire" style="width:220px;height:auto;margin-bottom:2.5rem;">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;width:100%;">
       <div style="background:var(--white);border-radius:12px;padding:1.5rem;text-align:center;box-shadow:var(--shadow);">
@@ -553,13 +555,30 @@ footer {
   </div>
 </div>
 
-<!-- TRUST BAR -->
-<div class="trust-bar">
-  <div class="trust-item"><span>✓</span> Trusted Nationwide</div>
-  <div class="trust-item"><span>✓</span> SEC · Big Ten · ACC · Big 12</div>
-  <div class="trust-item"><span>✓</span> No Inventory Required</div>
-  <div class="trust-item"><span>✓</span> Real Commission</div>
-  <div class="trust-item"><span>✓</span> Flexible Schedule</div>
+<!-- MARQUEE TICKER -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <span class="marquee-item">Rush Shirts</span>
+    <span class="marquee-item">Bid Day Drops</span>
+    <span class="marquee-item">Hoodies</span>
+    <span class="marquee-item">Hats</span>
+    <span class="marquee-item">Event Apparel</span>
+    <span class="marquee-item">Branded Merch</span>
+    <span class="marquee-item">Drinkware</span>
+    <span class="marquee-item">Tailgate Gear</span>
+    <span class="marquee-item">Tank Tops</span>
+    <span class="marquee-item">Tote Bags</span>
+    <span class="marquee-item">Rush Shirts</span>
+    <span class="marquee-item">Bid Day Drops</span>
+    <span class="marquee-item">Hoodies</span>
+    <span class="marquee-item">Hats</span>
+    <span class="marquee-item">Event Apparel</span>
+    <span class="marquee-item">Branded Merch</span>
+    <span class="marquee-item">Drinkware</span>
+    <span class="marquee-item">Tailgate Gear</span>
+    <span class="marquee-item">Tank Tops</span>
+    <span class="marquee-item">Tote Bags</span>
+  </div>
 </div>
 
 <!-- NOT AVERAGE -->
