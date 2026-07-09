@@ -235,8 +235,8 @@ nav {
 
 /* ── BENEFITS ── */
 .benefits-list {
-  display: flex; flex-direction: column;
-  margin-top: 2.5rem; max-width: 720px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0 3rem;
+  margin-top: 2.5rem; max-width: 900px;
 }
 
 .benefit-row {
@@ -244,8 +244,7 @@ nav {
   padding: 1.5rem 0;
   border-bottom: 1px solid var(--gray-mid);
 }
-.benefit-row:first-child { padding-top: 0; }
-.benefit-row:last-child { border-bottom: none; }
+.benefit-row:nth-last-child(-n+2) { border-bottom: none; }
 
 .benefit-num {
   font-family: var(--font-display); font-size: 1.6rem;
@@ -495,8 +494,10 @@ footer {
   .hero-right { min-height: 280px; padding: 2rem; }
   .hero-right-logo { width: 140px; }
 
-  .benefits-list { margin-top: 1.5rem; }
+  .benefits-list { grid-template-columns: 1fr; margin-top: 1.5rem; }
   .benefit-row { padding: 1.1rem 0; gap: 1rem; }
+  .benefit-row:nth-last-child(-n+2) { border-bottom: 1px solid var(--gray-mid); }
+  .benefit-row:last-child { border-bottom: none; }
   .benefit-num { font-size: 1.3rem; min-width: 2.2rem; }
   .benefit-title { font-size: 1rem; }
   .stanza-grid { grid-template-columns: 1fr; gap: 2rem; }
