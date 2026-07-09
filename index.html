@@ -78,12 +78,12 @@ nav {
 .hero-left {}
 
 .hero-tag {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  background: var(--gold-pale); color: var(--gold);
-  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em;
-  text-transform: uppercase; padding: 0.4rem 1rem; border-radius: 100px;
-  margin-bottom: 1.5rem;
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  color: var(--gold);
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.15em;
+  text-transform: uppercase; padding: 0; margin-bottom: 1.5rem;
 }
+.hero-tag svg { flex-shrink: 0; }
 
 .hero h1 {
   font-family: var(--font-display);
@@ -200,11 +200,12 @@ nav {
 }
 
 .section-tag {
-  display: inline-block; background: var(--gold-pale); color: var(--gold);
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  color: var(--gold);
   font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em;
-  text-transform: uppercase; padding: 0.35rem 0.9rem; border-radius: 100px;
-  margin-bottom: 1rem;
+  text-transform: uppercase; padding: 0; margin-bottom: 1rem;
 }
+.section-tag svg { flex-shrink: 0; }
 
 .section-title {
   font-family: var(--font-display);
@@ -381,12 +382,12 @@ nav {
 }
 
 .closing-eyebrow {
-  display: inline-block;
-  background: rgba(200,155,60,0.15); color: var(--gold);
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  color: var(--gold);
   font-size: 0.78rem; font-weight: 700; letter-spacing: 0.15em;
-  text-transform: uppercase; padding: 0.4rem 1rem; border-radius: 100px;
-  margin-bottom: 1.5rem;
+  text-transform: uppercase; padding: 0; margin-bottom: 1.5rem;
 }
+.closing-eyebrow svg { flex-shrink: 0; }
 
 .closing h2 {
   font-family: var(--font-display);
@@ -403,12 +404,12 @@ nav {
 }
 
 .urgency-badge {
-  display: inline-block; background: rgba(200,155,60,0.15);
-  border: 1px solid rgba(200,155,60,0.3); color: var(--gold);
-  font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em;
-  text-transform: uppercase; padding: 0.5rem 1.25rem; border-radius: 100px;
-  margin-bottom: 3rem;
+  display: inline-flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; justify-content: center;
+  color: var(--gold); max-width: 480px;
+  font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; padding: 0; margin-bottom: 3rem;
 }
+.urgency-badge svg { flex-shrink: 0; }
 
 /* ── FORM ── */
 .form-wrap {
@@ -614,7 +615,11 @@ footer {
 <!-- HERO -->
 <div style="max-width:1200px;margin:0 auto;padding:7rem 2rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;" class="hero-grid">
   <div>
-    <div class="hero-tag">🏛️ Campus Ambassador Program</div>
+    <div class="hero-tag">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><ellipse cx="3" cy="13" rx="1.4" ry="2.2" transform="rotate(-30 3 13)"/><ellipse cx="5" cy="9" rx="1.4" ry="2.2" transform="rotate(-15 5 9)"/><ellipse cx="6.5" cy="5" rx="1.4" ry="2.2"/><ellipse cx="7.5" cy="1.5" rx="1.2" ry="1.8" transform="rotate(15 7.5 1.5)"/></svg>
+      Campus Ambassador Program
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="transform:scaleX(-1);"><ellipse cx="3" cy="13" rx="1.4" ry="2.2" transform="rotate(-30 3 13)"/><ellipse cx="5" cy="9" rx="1.4" ry="2.2" transform="rotate(-15 5 9)"/><ellipse cx="6.5" cy="5" rx="1.4" ry="2.2"/><ellipse cx="7.5" cy="1.5" rx="1.2" ry="1.8" transform="rotate(15 7.5 1.5)"/></svg>
+    </div>
     <h1 style="font-family:var(--font-display);font-size:clamp(52px,6vw,80px);line-height:0.95;letter-spacing:0.02em;color:var(--black);margin-bottom:1.25rem;">
       THE BEST<br><span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:700;text-transform:none;background:linear-gradient(90deg, #C9A84C 0%, #E8C95A 25%, #FFE078 50%, #E8C95A 75%, #C9A84C 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;">Campus Job</span><br>YOU NEVER<br>KNEW EXISTED
     </h1>
@@ -647,7 +652,7 @@ footer {
 <!-- BENEFITS -->
 <div class="section" id="benefits" style="background:var(--white);">
   <div class="section-inner" style="text-align:center;">
-    <span class="section-tag">Why Students Love This</span>
+    <span class="section-tag"><svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><ellipse cx="3" cy="13" rx="1.4" ry="2.2" transform="rotate(-30 3 13)"/><ellipse cx="5" cy="9" rx="1.4" ry="2.2" transform="rotate(-15 5 9)"/><ellipse cx="6.5" cy="5" rx="1.4" ry="2.2"/><ellipse cx="7.5" cy="1.5" rx="1.2" ry="1.8" transform="rotate(15 7.5 1.5)"/></svg>Why Students Love This<svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" style="transform:scaleX(-1);"><ellipse cx="3" cy="13" rx="1.4" ry="2.2" transform="rotate(-30 3 13)"/><ellipse cx="5" cy="9" rx="1.4" ry="2.2" transform="rotate(-15 5 9)"/><ellipse cx="6.5" cy="5" rx="1.4" ry="2.2"/><ellipse cx="7.5" cy="1.5" rx="1.2" ry="1.8" transform="rotate(15 7.5 1.5)"/></svg></span>
     <h2 class="section-title">What's In It<br>For <span style="font-family:'EB Garamond',serif;font-style:italic;font-weight:700;background:linear-gradient(90deg, #C9A84C 0%, #E8C95A 25%, #FFE078 50%, #E8C95A 75%, #C9A84C 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;">You</span></h2>
     <div class="benefits-list" style="margin-left:auto;margin-right:auto;text-align:left;">
       <div class="benefit-row">
@@ -681,7 +686,7 @@ footer {
 <!-- HOW IT WORKS -->
 <div class="section" id="how-it-works" style="background:var(--black);">
   <div class="section-inner">
-    <span class="section-tag">Simple Process</span>
+    <span class="section-tag"><svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><ellipse cx="3" cy="13" rx="1.4" ry="2.2" transform="rotate(-30 3 13)"/><ellipse cx="5" cy="9" rx="1.4" ry="2.2" transform="rotate(-15 5 9)"/><ellipse cx="6.5" cy="5" rx="1.4" ry="2.2"/><ellipse cx="7.5" cy="1.5" rx="1.2" ry="1.8" transform="rotate(15 7.5 1.5)"/></svg>Simple Process<svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" style="transform:scaleX(-1);"><ellipse cx="3" cy="13" rx="1.4" ry="2.2" transform="rotate(-30 3 13)"/><ellipse cx="5" cy="9" rx="1.4" ry="2.2" transform="rotate(-15 5 9)"/><ellipse cx="6.5" cy="5" rx="1.4" ry="2.2"/><ellipse cx="7.5" cy="1.5" rx="1.2" ry="1.8" transform="rotate(15 7.5 1.5)"/></svg></span>
     <h2 class="section-title" style="color:var(--white);">How It <span style="font-family:'EB Garamond',serif;font-style:italic;font-weight:700;background:linear-gradient(90deg, #C9A84C 0%, #E8C95A 25%, #FFE078 50%, #E8C95A 75%, #C9A84C 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;">Works</span></h2>
     <div class="steps-row">
       <div class="step-card">
@@ -706,10 +711,10 @@ footer {
 
 <!-- CLOSING CTA -->
 <div class="closing" id="apply">
-  <div class="closing-eyebrow">Ready to Get Started?</div>
+  <div class="closing-eyebrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><ellipse cx="3" cy="13" rx="1.4" ry="2.2" transform="rotate(-30 3 13)"/><ellipse cx="5" cy="9" rx="1.4" ry="2.2" transform="rotate(-15 5 9)"/><ellipse cx="6.5" cy="5" rx="1.4" ry="2.2"/><ellipse cx="7.5" cy="1.5" rx="1.2" ry="1.8" transform="rotate(15 7.5 1.5)"/></svg>Ready to Get Started?<svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" style="transform:scaleX(-1);"><ellipse cx="3" cy="13" rx="1.4" ry="2.2" transform="rotate(-30 3 13)"/><ellipse cx="5" cy="9" rx="1.4" ry="2.2" transform="rotate(-15 5 9)"/><ellipse cx="6.5" cy="5" rx="1.4" ry="2.2"/><ellipse cx="7.5" cy="1.5" rx="1.2" ry="1.8" transform="rotate(15 7.5 1.5)"/></svg></div>
   <h2>Make An Impact<br>On Your <span style="font-family:'EB Garamond',serif;font-style:italic;font-weight:700;background:linear-gradient(90deg, #C9A84C 0%, #E8C95A 25%, #FFE078 50%, #E8C95A 75%, #C9A84C 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;">Campus</span></h2>
   <p class="closing-sub">Whether you're in Greek life, student government, club sports, cultural orgs, or honor societies — if you're active on campus and enjoy meeting new people, we want to talk.</p>
-  <div class="urgency-badge">⚡ Applications are limited — only a small number selected per campus</div>
+  <div class="urgency-badge"><svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" style="flex-shrink:0;"><ellipse cx="3" cy="13" rx="1.4" ry="2.2" transform="rotate(-30 3 13)"/><ellipse cx="5" cy="9" rx="1.4" ry="2.2" transform="rotate(-15 5 9)"/><ellipse cx="6.5" cy="5" rx="1.4" ry="2.2"/><ellipse cx="7.5" cy="1.5" rx="1.2" ry="1.8" transform="rotate(15 7.5 1.5)"/></svg>Applications are limited — only a small number selected per campus<svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" style="transform:scaleX(-1);flex-shrink:0;"><ellipse cx="3" cy="13" rx="1.4" ry="2.2" transform="rotate(-30 3 13)"/><ellipse cx="5" cy="9" rx="1.4" ry="2.2" transform="rotate(-15 5 9)"/><ellipse cx="6.5" cy="5" rx="1.4" ry="2.2"/><ellipse cx="7.5" cy="1.5" rx="1.2" ry="1.8" transform="rotate(15 7.5 1.5)"/></svg></div>
 
   <div class="form-wrap">
     <div class="form-title">Start My Application</div>
@@ -781,7 +786,7 @@ footer {
 <!-- FAQ -->
 <div class="section faq-section" id="faq">
   <div class="section-inner">
-    <span class="section-tag">Need to Know More?</span>
+    <span class="section-tag"><svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><ellipse cx="3" cy="13" rx="1.4" ry="2.2" transform="rotate(-30 3 13)"/><ellipse cx="5" cy="9" rx="1.4" ry="2.2" transform="rotate(-15 5 9)"/><ellipse cx="6.5" cy="5" rx="1.4" ry="2.2"/><ellipse cx="7.5" cy="1.5" rx="1.2" ry="1.8" transform="rotate(15 7.5 1.5)"/></svg>Need to Know More?<svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" style="transform:scaleX(-1);"><ellipse cx="3" cy="13" rx="1.4" ry="2.2" transform="rotate(-30 3 13)"/><ellipse cx="5" cy="9" rx="1.4" ry="2.2" transform="rotate(-15 5 9)"/><ellipse cx="6.5" cy="5" rx="1.4" ry="2.2"/><ellipse cx="7.5" cy="1.5" rx="1.2" ry="1.8" transform="rotate(15 7.5 1.5)"/></svg></span>
     <h2 class="section-title">Frequently Asked<br>Questions</h2>
     <div class="faq-grid">
       <div class="faq-card" onclick="this.classList.toggle('open')">
