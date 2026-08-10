@@ -1164,6 +1164,30 @@ document.getElementById('apply-form').addEventListener('submit', async function(
     source:            'ambassador-landing-new'
   };
 
+  // Submit to existing Supabase Edge Function (primary — keeps existing flow intact)
+  var crmPayload = {
+    submission: {
+      first_name:       payload.name_first,
+      last_name:        payload.name_last,
+      email:            payload.email,
+      phone:            payload.phone,
+      school:           payload.school_text,
+      organization:     payload.chapter_text,
+      instagram_handle: payload.instagram_handle,
+      date_of_birth:    payload.date_of_birth,
+      how_did_you_hear: payload.recruited_by_text,
+      tell_us_about_yourself: payload.about_text,
+      source:           'ambassador_landing_page'
+    }
+  };
+
+  // Also send to Greek Empire CRM applications pipeline (parallel, non-blocking)
+  fetch('https://greek-empire-crm-khaki.vercel.app/api/ambassador-apply', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(crmPayload)
+  }).catch(function() { /* CRM intake failure is non-blocking */ });
+
   fetch('https://gxglrktbvumrpzhlogno.supabase.co/functions/v1/apply', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
