@@ -937,8 +937,9 @@ footer {
         <span class="form-error-msg" role="alert">Please enter your school</span>
       </div>
       <div class="form-group">
-        <label for="chapter">Organization / Chapter</label>
-        <input type="text" id="chapter" name="chapter" placeholder="e.g. Alpha Phi, Student Gov, Club Soccer" autocomplete="off">
+        <label for="chapter">Organization / Chapter *</label>
+        <input type="text" id="chapter" name="chapter" placeholder="e.g. Alpha Phi, Student Gov, Club Soccer" autocomplete="off" required>
+        <span class="form-error-msg" role="alert">Please enter your organization or chapter</span>
       </div>
       <div class="form-group">
         <label for="instagram">Instagram Handle</label>
@@ -964,7 +965,7 @@ footer {
         <label for="about">Tell Us About Yourself</label>
         <textarea id="about" name="about" rows="4" placeholder="Clubs, activities, why you'd be a great fit..." style="width:100%;resize:vertical;font-family:inherit;"></textarea>
       </div>
-      <button type="submit" class="form-submit" id="submit-btn">Start My Application →</button>
+      <button type="submit" class="form-submit" id="submit-btn">Change My Application →</button>
       <p class="form-agree">By applying you agree to be contacted by the Greek Empire team. We respect your privacy — read our <a onclick="document.getElementById('privacyModal').classList.add('open')">Privacy Policy</a>.</p>
     </form>
     <div class="form-success" id="form-success">
@@ -1115,6 +1116,7 @@ document.getElementById('apply-form').addEventListener('submit', async function(
     { id: 'email', check: function(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()); } },
     { id: 'phone', check: function(v) { return v.trim().length >= 7; } },
     { id: 'school', check: function(v) { return v.trim().length > 0; } },
+    { id: 'chapter', check: function(v) { return v.trim().length > 0; } },
     { id: 'dob', check: function(v) { return v.trim().length > 0; } }
   ];
 
@@ -1194,7 +1196,7 @@ document.getElementById('apply-form').addEventListener('submit', async function(
   .then(function() { showSuccess(); })
   .catch(function() { showSuccess(); })
   .finally(function() {
-    btn.textContent = 'Start My Application →';
+    btn.textContent = 'Change My Application →';
     btn.disabled = false;
   });
 
