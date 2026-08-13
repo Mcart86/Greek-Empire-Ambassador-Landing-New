@@ -946,7 +946,7 @@ footer {
       </div>
       <div class="form-group">
         <label for="dob">Date of Birth *</label>
-        <input type="text" id="dob" name="dob" placeholder="MM/DD/YYYY" autocomplete="bday" required>
+        <input type="text" id="dob" name="dob" placeholder="MM/DD/YYYY" autocomplete="bday" inputmode="numeric" maxlength="10" required>
         <span class="form-error-msg" role="alert">Please enter your date of birth</span>
       </div>
       <div class="form-group">
@@ -1215,6 +1215,22 @@ document.querySelectorAll('#apply-form input, #apply-form select').forEach(funct
     if (group) group.classList.remove('has-error');
   });
 });
+
+// Auto-format Date of Birth as MM/DD/YYYY while typing
+(function() {
+  var dobInput = document.getElementById('dob');
+  if (!dobInput) return;
+  dobInput.addEventListener('input', function() {
+    var digits = dobInput.value.replace(/\D/g, '').slice(0, 8);
+    var formatted = digits;
+    if (digits.length > 4) {
+      formatted = digits.slice(0, 2) + '/' + digits.slice(2, 4) + '/' + digits.slice(4);
+    } else if (digits.length > 2) {
+      formatted = digits.slice(0, 2) + '/' + digits.slice(2);
+    }
+    dobInput.value = formatted;
+  });
+})();
 
 // Reveal the free-text field when "Other" is chosen in the school dropdown.
 document.getElementById('school').addEventListener('change', function() {
