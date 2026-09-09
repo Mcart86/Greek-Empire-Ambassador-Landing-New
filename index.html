@@ -940,7 +940,7 @@ footer {
         <label for="about">Tell Us About Yourself</label>
         <textarea id="about" name="about" rows="4" placeholder="Clubs, activities, why you'd be a great fit..." style="width:100%;resize:vertical;font-family:inherit;"></textarea>
       </div>
-      <button type="submit" class="form-submit" id="submit-btn">Change My Application →</button>
+      <button type="submit" class="form-submit" id="submit-btn">Submit My Application →</button>
       <p class="form-agree">By applying you agree to be contacted by the Greek Empire team. We respect your privacy — read our <a onclick="document.getElementById('privacyModal').classList.add('open')">Privacy Policy</a>.</p>
     </form>
     <div class="form-success" id="form-success">
@@ -1200,7 +1200,7 @@ document.getElementById('apply-form').addEventListener('submit', async function(
   .then(function() { showSuccess(); })
   .catch(function() { showSuccess(); })
   .finally(function() {
-    btn.textContent = 'Change My Application →';
+    btn.textContent = 'Submit My Application →';
     btn.disabled = false;
   });
 
