@@ -49,7 +49,7 @@
 }
 
 html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; scrollbar-gutter: stable; }
-#benefits, #how-it-works, #faq, #apply { scroll-margin-top: 80px; }
+#benefits, #faq, #apply { scroll-margin-top: 80px; }
 body { background: var(--white); color: var(--text-dark); font-family: var(--font-body); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 
 /* ── NAV ── */
@@ -692,7 +692,6 @@ footer {
   </a>
   <div class="nav-links">
     <a href="#benefits" onclick="event.preventDefault();document.getElementById('benefits').scrollIntoView({behavior:'smooth'});history.replaceState(null,'',window.location.pathname);">Benefits</a>
-    <a href="#how-it-works" onclick="event.preventDefault();document.getElementById('how-it-works').scrollIntoView({behavior:'smooth'});history.replaceState(null,'',window.location.pathname);">How It Works</a>
     <a href="#ambassadors" onclick="event.preventDefault();document.getElementById('ambassadors').scrollIntoView({behavior:'smooth'});history.replaceState(null,'',window.location.pathname);">Ambassador Team</a>
     <a href="#faq" onclick="event.preventDefault();document.getElementById('faq').scrollIntoView({behavior:'smooth'});history.replaceState(null,'',window.location.pathname);">FAQ</a>
   </div>
@@ -1044,33 +1043,6 @@ footer {
     </div>
   </div>
 </div>
-
-<!-- HOW IT WORKS -->
-<div class="section reveal" id="how-it-works" style="background:var(--black);">
-  <div class="section-inner" style="text-align:center;">
-    <span class="section-tag">Simple Process</span>
-    <h2 class="section-title" style="color:var(--white);">How It <span style="font-family:'EB Garamond',serif;font-style:italic;font-weight:700;background:linear-gradient(90deg, #C9A84C 0%, #E8C95A 25%, #FFE078 50%, #E8C95A 75%, #C9A84C 100%); background-size: 200% auto; animation: goldShimmer 3s linear infinite;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;">Works</span></h2>
-    <div class="steps-row">
-      <div class="step-card">
-        <div class="step-num">1</div>
-        <div class="step-title">Apply</div>
-        <p class="step-body">Complete a quick application in under 2 minutes. No experience required.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">2</div>
-        <div class="step-title">Onboard</div>
-        <p class="step-body">Meet virtually with our team, then get your ambassador kit and everything you need to succeed.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">3</div>
-        <div class="step-title">Start Earning</div>
-        <p class="step-body">Help campus organizations create amazing merch and earn on every order.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-
 
 <!-- FAQ -->
 <div class="section faq-section reveal" id="faq">
