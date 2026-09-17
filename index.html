@@ -305,6 +305,7 @@ nav {
 .skills-gained {
   max-width: 900px; margin: 3rem auto 0; text-align: center;
   background: #0e0e0c; border-radius: 20px; padding: 2.5rem 2rem;
+  overflow: hidden; box-sizing: border-box;
 }
 .skills-gained-label {
   text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.78rem;
@@ -312,11 +313,12 @@ nav {
 }
 .skills-tags {
   display: grid; grid-template-columns: repeat(3, max-content); justify-content: center; gap: 0.75rem;
+  max-width: 100%;
 }
 .skills-tag {
   border: 1px solid var(--gold); color: #fff; font-weight: 700;
   font-size: 0.85rem; letter-spacing: 0.01em; padding: 0.5rem 1.15rem;
-  border-radius: 999px; background: transparent;
+  border-radius: 999px; background: transparent; max-width: 100%;
 }
 
 /* ── WHAT YOU'LL DO ── */
@@ -590,7 +592,7 @@ footer {
   .nav-links { display: none; }
 
   .section { padding: 3rem 1.25rem; }
-  .skills-tags { display: flex; flex-wrap: wrap; }
+  .skills-tags { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.6rem; }
   .skills-gained { padding: 2rem 1.25rem; }
   #ambassadors { padding-top: 1.5rem; }
   .closing { padding: 3.5rem 1.25rem; }
@@ -679,6 +681,7 @@ footer {
 @media (max-width: 480px) {
   .traits-grid { grid-template-columns: 1fr; }
   .hero h1 { font-size: 44px; }
+  .skills-tags { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
