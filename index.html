@@ -590,7 +590,7 @@ footer {
   .nav-links { display: none; }
 
   .section { padding: 3rem 1.25rem; }
-  .skills-tags { grid-template-columns: repeat(2, max-content); }
+  .skills-tags { display: flex; flex-wrap: wrap; }
   .skills-gained { padding: 2rem 1.25rem; }
   #ambassadors { padding-top: 1.5rem; }
   .closing { padding: 3.5rem 1.25rem; }
@@ -650,6 +650,7 @@ footer {
   footer { flex-direction: column; text-align: center; }
 
   .hero-calendly-wrap { padding-top: 0.5rem; }
+  .hero-calendly-wrap > div { padding-left: 0.75rem; padding-right: 0.75rem; }
   .mobile-footer-photo { display: block; padding: 0 1.25rem 2rem; }
   .mobile-footer-photo img { width: 100%; height: auto; border-radius: 16px; box-shadow: var(--shadow-lg); display: block; }
 
@@ -727,7 +728,7 @@ footer {
         <div style="font-family:var(--font-display, inherit);text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);font-size:0.78rem;font-weight:700;margin-bottom:0.4rem;">Talk To Us</div>
         <h2 style="font-family:'EB Garamond',serif;font-style:italic;color:#fff;font-size:clamp(20px,2.2vw,26px);margin-bottom:0.75rem;">Book a Quick Call</h2>
       </div>
-      <div class="calendly-inline-widget" data-url="https://calendly.com/mcarter-greekempire/30min?hide_event_type_details=1&background_color=0e0e0c&text_color=ffffff&primary_color=c9a84c" style="min-width:280px;height:560px;"></div>
+      <div class="calendly-inline-widget" data-url="https://calendly.com/mcarter-greekempire/30min?hide_event_type_details=1&background_color=0e0e0c&text_color=ffffff&primary_color=c9a84c" style="width:100%;height:560px;"></div>
     </div>
   </div>
 
