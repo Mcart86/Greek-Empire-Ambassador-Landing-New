@@ -756,30 +756,27 @@ footer {
 .amb-circle:hover { box-shadow: 0 0 24px rgba(201,168,76,0.4); }
 .amb-img { width:130%; height:130%; object-fit:cover; display:block; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); transition: transform 0.4s ease; }
 .amb-circle:hover .amb-img { transform:translate(-50%,-50%) scale(1.1); }
-.amb-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:2.5rem; margin-top:2.5rem; }
-.amb-card { width: clamp(140px, 22vw, 180px); text-align:center; }
 .amb-name { font-family:var(--font-display); font-size:1.3rem; letter-spacing:0.12em; text-transform:uppercase; background:linear-gradient(90deg, #C9A84C 0%, #E8C95A 25%, #FFE078 50%, #E8C95A 75%, #C9A84C 100%); background-size:200% auto; animation:goldShimmer 3s linear infinite; -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent; }
+.amb-quote-wrap { display:flex; align-items:center; justify-content:center; gap:3rem; margin-top:2.5rem; text-align:left; flex-wrap:wrap; }
+.amb-quote-mark { font-family:'EB Garamond',serif; font-style:italic; font-size:3.5rem; line-height:1; color:var(--gold); margin-bottom:0.5rem; }
+.amb-quote-text { font-family:'EB Garamond',serif; font-style:italic; font-size:1.5rem; line-height:1.5; color:var(--black); max-width:480px; margin-bottom:1rem; }
+@media (max-width: 640px) {
+  .amb-quote-wrap { flex-direction:column; text-align:center; }
+  .amb-quote-text { max-width:100%; }
+}
 </style>
 <div class="section reveal" id="ambassadors" style="background:var(--white);">
   <div class="section-inner" style="text-align:center;">
     <span class="section-tag">Campus Ambassadors</span>
-    <h2 class="section-title">Meet Some of the <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:700;background:linear-gradient(90deg, #C9A84C 0%, #E8C95A 25%, #FFE078 50%, #E8C95A 75%, #C9A84C 100%); background-size: 200% auto; animation: goldShimmer 3s linear infinite;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;">Ambassadors</span></h2>
-    <div class="amb-grid">
-      <div class="amb-card">
-        <div class="amb-circle"><img src="https://greek-empire.vercel.app/ambassador-1.png" class="amb-img" alt="Elijah" loading="lazy"></div>
-        <div class="amb-name">Elijah</div>
-      </div>
-      <div class="amb-card">
+    <h2 class="section-title">Hear From Our <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:700;background:linear-gradient(90deg, #C9A84C 0%, #E8C95A 25%, #FFE078 50%, #E8C95A 75%, #C9A84C 100%); background-size: 200% auto; animation: goldShimmer 3s linear infinite;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;">Ambassador</span></h2>
+    <div class="amb-quote-wrap">
+      <div class="amb-card" style="width:clamp(140px, 22vw, 180px);">
         <div class="amb-circle"><img src="https://greek-empire.vercel.app/ambassador-2.png" class="amb-img" alt="Jackson" loading="lazy"></div>
         <div class="amb-name">Jackson</div>
       </div>
-      <div class="amb-card">
-        <div class="amb-circle"><img src="https://greek-empire.vercel.app/ambassador-3.png" class="amb-img" alt="Avry" loading="lazy"></div>
-        <div class="amb-name">Avry</div>
-      </div>
-      <div class="amb-card">
-        <div class="amb-circle"><img src="https://greek-empire.vercel.app/ambassador-4.png" class="amb-img" alt="Alexa" loading="lazy"></div>
-        <div class="amb-name">Alexa</div>
+      <div>
+        <div class="amb-quote-mark">"</div>
+        <p class="amb-quote-text">It's been a great way to meet more people on campus, build connections, and make some extra money.</p>
       </div>
     </div>
   </div>
