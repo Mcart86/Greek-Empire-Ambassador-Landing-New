@@ -297,6 +297,27 @@ nav {
   font-weight: 800; font-size: 1.15rem; color: var(--black);
 }
 
+.benefit-sub {
+  font-size: 0.92rem; font-weight: 500; color: var(--text-mid);
+  margin-top: 0.3rem;
+}
+
+.skills-gained {
+  max-width: 900px; margin: 3rem auto 0; text-align: center;
+}
+.skills-gained-label {
+  text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.78rem;
+  font-weight: 700; color: var(--gold); margin-bottom: 1rem;
+}
+.skills-tags {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem;
+}
+.skills-tag {
+  border: 1px solid var(--gold); color: var(--black); font-weight: 700;
+  font-size: 0.85rem; letter-spacing: 0.01em; padding: 0.5rem 1.15rem;
+  border-radius: 999px; background: transparent;
+}
+
 /* ── WHAT YOU'LL DO ── */
 .do-section { background: var(--black); }
 .do-section .section-title { color: var(--white); }
@@ -965,7 +986,10 @@ footer {
     <div class="benefits-list" style="margin-left:auto;margin-right:auto;text-align:left;">
       <div class="benefit-row">
         <span class="benefit-num">01</span>
-        <div class="benefit-title">Make Money. Build Your Future.</div>
+        <div>
+          <div class="benefit-title">Make Money. Build Your Future.</div>
+          <div class="benefit-sub">Ambassadors earn $500–$25,000+ per school year, depending on effort and sales.</div>
+        </div>
       </div>
       <div class="benefit-row">
         <span class="benefit-num">02</span>
@@ -986,6 +1010,17 @@ footer {
       <div class="benefit-row">
         <span class="benefit-num">06</span>
         <div class="benefit-title">Gain Real-World Skills That Last Beyond College</div>
+      </div>
+    </div>
+    <div class="skills-gained">
+      <div class="skills-gained-label">Skills You'll Walk Away With</div>
+      <div class="skills-tags">
+        <span class="skills-tag">Communication</span>
+        <span class="skills-tag">Sales</span>
+        <span class="skills-tag">Marketing</span>
+        <span class="skills-tag">Relationship Management</span>
+        <span class="skills-tag">Time Management</span>
+        <span class="skills-tag">Entrepreneurship</span>
       </div>
     </div>
   </div>
