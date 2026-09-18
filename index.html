@@ -748,8 +748,8 @@ footer {
           <input type="email" id="hero_email" name="hero_email" placeholder="your@email.com" autocomplete="email" inputmode="email" required>
         </div>
         <div class="form-group" style="margin-bottom:1.25rem;">
-          <label for="hero_school" style="color:rgba(255,255,255,0.75);">School *</label>
-          <input type="text" id="hero_school" name="hero_school" placeholder="University / College" autocomplete="organization" required>
+          <label for="hero_phone" style="color:rgba(255,255,255,0.75);">Phone *</label>
+          <input type="tel" id="hero_phone" name="hero_phone" placeholder="(555) 000-0000" autocomplete="tel" inputmode="tel" required>
         </div>
         <button type="submit" class="form-submit" id="hero-mini-submit">Get Started →</button>
       </form>
@@ -766,23 +766,23 @@ footer {
     var first = document.getElementById('hero_first_name').value.trim();
     var last = document.getElementById('hero_last_name').value.trim();
     var email = document.getElementById('hero_email').value.trim();
-    var school = document.getElementById('hero_school').value.trim();
+    var phone = document.getElementById('hero_phone').value.trim();
     var mainFirst = document.getElementById('first_name');
     var mainLast = document.getElementById('last_name');
     var mainEmail = document.getElementById('email');
-    var mainSchool = document.getElementById('school');
+    var mainPhone = document.getElementById('phone');
     if (mainFirst) mainFirst.value = first;
     if (mainLast) mainLast.value = last;
     if (mainEmail) mainEmail.value = email;
-    if (mainSchool) mainSchool.value = school;
+    if (mainPhone) mainPhone.value = phone;
     var applySection = document.getElementById('apply');
     if (applySection) {
       applySection.scrollIntoView({behavior:'smooth'});
       history.replaceState(null,'',window.location.pathname);
     }
     setTimeout(function(){
-      var phoneField = document.getElementById('phone');
-      if (phoneField) phoneField.focus();
+      var schoolField = document.getElementById('school');
+      if (schoolField) schoolField.focus();
     }, 600);
   });
 })();
