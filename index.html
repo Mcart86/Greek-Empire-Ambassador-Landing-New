@@ -733,9 +733,15 @@ footer {
         <p style="color:rgba(255,255,255,0.6);font-size:0.85rem;line-height:1.5;margin:0;">Drop your info and we'll pull up the full application for you.</p>
       </div>
       <form id="hero-mini-form" novalidate>
-        <div class="form-group">
-          <label for="hero_name" style="color:rgba(255,255,255,0.75);">Full Name *</label>
-          <input type="text" id="hero_name" name="hero_name" placeholder="Jane Smith" autocomplete="name" required>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="hero_first_name" style="color:rgba(255,255,255,0.75);">First Name *</label>
+            <input type="text" id="hero_first_name" name="hero_first_name" placeholder="Jane" autocomplete="given-name" required>
+          </div>
+          <div class="form-group">
+            <label for="hero_last_name" style="color:rgba(255,255,255,0.75);">Last Name *</label>
+            <input type="text" id="hero_last_name" name="hero_last_name" placeholder="Smith" autocomplete="family-name" required>
+          </div>
         </div>
         <div class="form-group">
           <label for="hero_email" style="color:rgba(255,255,255,0.75);">Email *</label>
@@ -757,12 +763,10 @@ footer {
   if (!miniForm) return;
   miniForm.addEventListener('submit', function(e){
     e.preventDefault();
-    var fullName = document.getElementById('hero_name').value.trim();
+    var first = document.getElementById('hero_first_name').value.trim();
+    var last = document.getElementById('hero_last_name').value.trim();
     var email = document.getElementById('hero_email').value.trim();
     var school = document.getElementById('hero_school').value.trim();
-    var nameParts = fullName.split(/\s+/).filter(Boolean);
-    var first = nameParts.shift() || '';
-    var last = nameParts.join(' ');
     var mainFirst = document.getElementById('first_name');
     var mainLast = document.getElementById('last_name');
     var mainEmail = document.getElementById('email');
