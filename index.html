@@ -952,10 +952,6 @@ footer {
         <span class="form-error-msg" role="alert">Please enter your organization or chapter</span>
       </div>
       <div class="form-group">
-        <label for="instagram">Instagram Handle</label>
-        <input type="text" id="instagram" name="instagram" placeholder="@yourhandle" autocomplete="off">
-      </div>
-      <div class="form-group">
         <label for="referred_by">How Did You Hear About Us?</label>
         <select id="referred_by" name="referred_by">
           <option value="" disabled selected>Select one</option>
@@ -1213,7 +1209,6 @@ document.getElementById('apply-form').addEventListener('submit', async function(
     phone:             document.getElementById('phone').value.trim(),
     school_text:       schoolText,
     chapter_text:      document.getElementById('chapter').value.trim(),
-    instagram_handle:  document.getElementById('instagram').value.trim(),
     recruited_by_text: document.getElementById('referred_by').value,
     about_text:        document.getElementById('about').value.trim(),
     source:            'ambassador-landing-new'
@@ -1228,7 +1223,6 @@ document.getElementById('apply-form').addEventListener('submit', async function(
       phone:            payload.phone,
       school:           payload.school_text,
       organization:     payload.chapter_text,
-      instagram_handle: payload.instagram_handle,
       how_did_you_hear: payload.recruited_by_text,
       tell_us_about_yourself: payload.about_text,
       source:           'ambassador_landing_page'
