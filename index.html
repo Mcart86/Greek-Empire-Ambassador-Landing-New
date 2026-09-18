@@ -956,11 +956,6 @@ footer {
         <input type="text" id="instagram" name="instagram" placeholder="@yourhandle" autocomplete="off">
       </div>
       <div class="form-group">
-        <label for="dob">Date of Birth *</label>
-        <input type="text" id="dob" name="dob" placeholder="MM/DD/YYYY" autocomplete="bday" inputmode="numeric" maxlength="10" required>
-        <span class="form-error-msg" role="alert">Please enter your date of birth</span>
-      </div>
-      <div class="form-group">
         <label for="referred_by">How Did You Hear About Us?</label>
         <select id="referred_by" name="referred_by">
           <option value="" disabled selected>Select one</option>
@@ -1114,7 +1109,7 @@ footer {
   <div class="privacy-modal">
     <button class="privacy-modal-close" onclick="document.getElementById('privacyModal').classList.remove('open')" aria-label="Close privacy policy">×</button>
     <h3>Privacy Policy</h3>
-    <p>Greek Empire collects the information you submit on this application (name, email, phone, school, date of birth, and any other details you provide) solely to evaluate your application and, if selected, to onboard you as a Campus Ambassador.</p>
+    <p>Greek Empire collects the information you submit on this application (name, email, phone, school, and any other details you provide) solely to evaluate your application and, if selected, to onboard you as a Campus Ambassador.</p>
     <p>We do not sell your personal information to third parties. Your information may be shared internally with the Greek Empire team for recruitment and program administration purposes only.</p>
     <p>You may request that we delete your information at any time by contacting <a href="mailto:mcarter@empirepromos.com" style="color:var(--gold);">mcarter@empirepromos.com</a>.</p>
   </div>
@@ -1178,8 +1173,7 @@ document.getElementById('apply-form').addEventListener('submit', async function(
     { id: 'email', check: function(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()); } },
     { id: 'phone', check: function(v) { return v.trim().length >= 7; } },
     { id: 'school', check: function(v) { return v.trim().length > 0; } },
-    { id: 'chapter', check: function(v) { return v.trim().length > 0; } },
-    { id: 'dob', check: function(v) { return v.trim().length > 0; } }
+    { id: 'chapter', check: function(v) { return v.trim().length > 0; } }
   ];
 
   // If "Other" is selected, the typed-in school name is required too.
@@ -1220,7 +1214,6 @@ document.getElementById('apply-form').addEventListener('submit', async function(
     school_text:       schoolText,
     chapter_text:      document.getElementById('chapter').value.trim(),
     instagram_handle:  document.getElementById('instagram').value.trim(),
-    date_of_birth:     document.getElementById('dob').value,
     recruited_by_text: document.getElementById('referred_by').value,
     about_text:        document.getElementById('about').value.trim(),
     source:            'ambassador-landing-new'
@@ -1236,7 +1229,6 @@ document.getElementById('apply-form').addEventListener('submit', async function(
       school:           payload.school_text,
       organization:     payload.chapter_text,
       instagram_handle: payload.instagram_handle,
-      date_of_birth:    payload.date_of_birth,
       how_did_you_hear: payload.recruited_by_text,
       tell_us_about_yourself: payload.about_text,
       source:           'ambassador_landing_page'
@@ -1279,22 +1271,6 @@ document.querySelectorAll('#apply-form input, #apply-form select').forEach(funct
     if (group) group.classList.remove('has-error');
   });
 });
-
-// Auto-format Date of Birth as MM/DD/YYYY while typing
-(function() {
-  var dobInput = document.getElementById('dob');
-  if (!dobInput) return;
-  dobInput.addEventListener('input', function() {
-    var digits = dobInput.value.replace(/\D/g, '').slice(0, 8);
-    var formatted = digits;
-    if (digits.length > 4) {
-      formatted = digits.slice(0, 2) + '/' + digits.slice(2, 4) + '/' + digits.slice(4);
-    } else if (digits.length > 2) {
-      formatted = digits.slice(0, 2) + '/' + digits.slice(2);
-    }
-    dobInput.value = formatted;
-  });
-})();
 
 // Reveal the free-text field when "Other" is chosen in the school dropdown.
 document.getElementById('school').addEventListener('change', function() {
